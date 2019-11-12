@@ -37,24 +37,42 @@
    </ul>
 </div>
 
-  <div class="container-fluid mt-4">
-    <div class="row">
-      <div class="col-sm-6 col-md-3 col-lg-3">
-        <img src="imgs/positivo.jpg" class="img-fluid" alt="Responsive image">
+<header class="promotions">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active" style="background-image: url('imgs/dell.jpg')">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
       </div>
-      <div class="col-sm-6 col-md-3 col-lg-3">
-        <img src="imgs/notebook.jpg" class="img-fluid" alt="Responsive image">
+      <div class="carousel-item" style="background-image: url('imgs/positivo.jpg')">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
       </div>
-      <div class="col-sm-6 col-md-3 col-lg-3">
-        <img src="imgs/dell.jpg" class="img-fluid" alt="Responsive image">
+      <div class="carousel-item" style="background-image: url('imgs/notebook.jpg')">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
       </div>
-      <div class="col-sm-6 col-md-3 col-lg-3">
-        <img src="imgs/acer.jpg" class="img-fluid" alt="Responsive image">
+      <div class="carousel-item" style="background-image: url('imgs/acer.jpg')">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
       </div>
-
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
   </div>
-  <br><br><br><br><br><br>
+</header>
 
   <!-- Card-->
   <div class="container">
@@ -174,6 +192,9 @@
  <?php
  require('footer.php');
   ?>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
