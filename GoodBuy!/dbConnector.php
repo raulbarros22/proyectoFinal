@@ -2,7 +2,7 @@
 
 function connectDB()
 {
-    $dsn = 'mysql:host127.0.0.1;dbnamegoodbuy_db=;port=3306';
+    $dsn = 'mysql:host127.0.0.1;dbname=goodbuy_db;port=3306';
     $dbUser = 'root';
     $dbPass = '';
 
