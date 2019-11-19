@@ -4,14 +4,19 @@
 <head>
   <title>Home</title>
   <?php
-   require('head.php');
-   ?>
+require 'head.php';
+?>
 </head>
 
 <body>
   <?php
-  require('navbarg.php');
- ?>
+    require 'navbarg.php';
+    require 'dbConnector.php';
+    $db = connectDB();
+    if ($db) {
+        echo 'Conectado';
+    }
+  ?>
   <!--2- Nav-->
   <div class="container-fluid border-top">
     <ul class="nav justify-content-center">
@@ -201,8 +206,8 @@
   <br>
 
   <?php
- require('footer.php');
-  ?>
+require 'footer.php';
+?>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 
