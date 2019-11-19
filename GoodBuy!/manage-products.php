@@ -45,7 +45,6 @@ if (isset($_POST) && (count($_POST) > 0)) {
         }
 
     } catch (\Throwable $th) {
-        echo 'error';
         echo $th;
     }
 

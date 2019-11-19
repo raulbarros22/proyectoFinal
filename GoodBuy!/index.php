@@ -13,9 +13,6 @@ require 'head.php';
     require 'navbarg.php';
     require 'dbConnector.php';
     $db = connectDB();
-    if ($db) {
-        echo 'Conectado';
-    }
   ?>
   <!--2- Nav-->
   <div class="container-fluid border-top">
