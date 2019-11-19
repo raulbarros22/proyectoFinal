@@ -16,6 +16,7 @@ li{
 }
 body{
  font-family: 'Raleway', sans-serif;
+ /* color: black !important; */
 
 }
 
@@ -245,7 +246,7 @@ button.btn.btn-lg.btn-facebook.btn-block.text-uppercase {
   border: none;
   border-radius: 50%;
   background-color: lightgray;
-  box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);    
+  box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);
 }
 .carousel-indicators .active {
   width: 48px;
@@ -256,43 +257,4 @@ button.btn.btn-lg.btn-facebook.btn-block.text-uppercase {
 
 #carouselExampleIndicators span {
   background-color: black
-}
-
-/* Pagina para modificar / agregar / eliminar productos */
-
-#add-form {
-  padding-top: 30px;
-}
-
-#button-row {
-  padding-top: 10px;
-}
-
-#add-product {
-  background-color: RGB(0,77,152);
-}
-
-body {
-  color: rgb(255,255,255);
-}
-
-.btn.btn-sm {
-  color: white;
-  text-transform: uppercase;
-}
-
-#mod-product {
-  background-color: RGB(168,19,62);
-}
-
-#collapse-1 {
-  padding-bottom: 30px;
-}
-
-.btn.btn-sm {
-  margin: 26px;
-}
-
-#update-form {
-  padding-bottom: 30px;
 }

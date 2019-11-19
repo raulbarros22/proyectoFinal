@@ -1,15 +1,22 @@
 <?php
 session_start();
-$usuarios = file_get_contents("baseUsuarios.json");
-$usuariosArray = json_decode($usuarios,true);
-$i=0;
 
-while($i<count($usuariosArray)){
-  if($usuariosArray[$i]["email"]==$_SESSION["email"]){
-    break;
-    }
-    $i++;
+include("dbConnector.php");
+$baseDatos->beginTransaction();
+try {
+  $query="select * from CLIENTES where email='" . $_SESSION['email']. "'";
+  $consulta=$baseDatos->prepare($query);
+  $consulta->execute();
+  $result=$consulta->fetch();
+  if ($result==NULL) {
+    $error .= 'Usuario Inexistente!! <br>';
   }
+
+} catch (\Exception $e) {
+  $baseDatos->rollBack(); echo $e->getMessage();
+}
+
+
  ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -33,18 +40,18 @@ while($i<count($usuariosArray)){
                   <div class="row">
 
                       <div class="col-sm-6 col-md-4">
-                          <img src="imgs/imgProfiles/<?=$usuariosArray[$i]["imgPerfil"]?>" alt="" class="img-rounded img-responsive" width="100%">
+                          <img src="imgs/imgProfiles/<?=$result["imgPerfil"]?>" alt="" class="img-rounded img-responsive" width="100%">
                       </div>
                       <div class="col-sm-6 col-md-8">
-                          <h4><?= $usuariosArray[$i]["nombre"]. " ".$usuariosArray[$i]["apellido"] ?></h4>
+                          <h4><?= $result["nombre"]. " ".$result["apellido"] ?></h4>
                           <!-- <small><cite title="San Francisco, USA">Rosario, Argentina<i class="fas fa-map-marker px-1"></i></cite></small> -->
 
-                              <i class="fas fa-envelope-open-text prefix px-1"></i><h6><?= $usuariosArray[$i]["email"]?></h6>
+                              <i class="fas fa-envelope-open-text prefix px-1"></i><h6><?= $result["email"]?></h6>
 
                               <br />
 
                               <br />
-                              <h6>Telefono: <?=$usuariosArray[$i]["telefono"]?></h6>
+                              <h6>Telefono: <?=$result["telefono"]?></h6>
                               <!-- <i class="far fa-calendar-alt px-1"></i> 24 Junio de 1989</p> -->
 
 

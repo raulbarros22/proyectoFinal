@@ -1,4 +1,5 @@
 <?php
+include("dbConnector.php");
 $error='';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -45,61 +46,37 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
          $error .= 'Por favor introduce ambas contraseñas <br>El formato de imagen no es valido <br>';
 
        }else{
-         $nombreArchivo = $_POST['firstname'].$_POST['lastname'].'.'.$ext;
-         move_uploaded_file($_FILES['imgProfile']['tmp_name'], "imgs/imgProfiles/$nombreArchivo");
+         $imgPerfil = $_POST['firstname'].$_POST['lastname'].'.'.$ext;
+         move_uploaded_file($_FILES['imgProfile']['tmp_name'], "imgs/imgProfiles/$imgPerfil");
        }
     }
   }
 
   if($error == ''){
-
-    if(file_exists("baseUsuarios.json")){
-      $nombre = trim($_POST['firstname']);
-      $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
-      $apellido = trim($_POST['lastname']);
-      $apellido = filter_var($apellido, FILTER_SANITIZE_STRING);
-      $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-      $usuario = [
-          "nombre" => $nombre,
-          "apellido"=> $apellido,
-          "email" => $email,
-          "telefono"=>$_POST['phone'],
-          "imgPerfil"=> $nombreArchivo,
-          "password" => password_hash($_POST["password1"],PASSWORD_DEFAULT)
-      ];
-      $listaUsuarios = file_get_contents('baseUsuarios.json');
-      $usuariosArray = json_decode($listaUsuarios, true);
-      //array_push($usuariosArray[],$usuario);
-      $usuariosArray[]=$usuario;
-      // $lista_usuarios_array[] = $_POST; si tomo de POST no guarda el hash de la contraseña!!
-      $usuariosFinal = json_encode($usuariosArray);
-      file_put_contents('baseUsuarios.json', $usuariosFinal);
-      //echo 'Registro Exitoso!';exit;
+    $nombre = trim($_POST['firstname']);
+    $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
+    $apellido = trim($_POST['lastname']);
+    $apellido = filter_var($apellido, FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $pass=password_hash($_POST["password1"],PASSWORD_DEFAULT);
+    $telefono=$_POST["phone"];
+    $baseDatos->beginTransaction();
+    try {
+      $consulta=$baseDatos->prepare("Insert into clientes values(default,:nombre,:apellido,:email,:pass,:telefono,:imgPerfil)");
+      $consulta->bindValue(":nombre",$nombre);
+      $consulta->bindValue(":apellido",$apellido);
+      $consulta->bindValue(":email",$email);
+      $consulta->bindValue(":pass",$pass);
+      $consulta->bindValue(":telefono",$telefono);
+      $consulta->bindValue(":imgPerfil",$imgPerfil);
+      $consulta->execute();
+      $baseDatos->commit();
       session_start();
-      $_SESSION["name"]=$usuario["nombre"]." ".$usuario["apellido"];
+      $_SESSION["name"]=$nombre." ".$apellido;
       $_SESSION["email"]=$email;
       header("location:index.php");
-    }else {
-      $nombre = trim($_POST['firstname']);
-      $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
-      $apellido = trim($_POST['lastname']);
-      $apellido = filter_var($apellido, FILTER_SANITIZE_STRING);
-      $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-      $usuario[] = [
-          "nombre" => $nombre,
-          "apellido"=> $apellido,
-          "email" => $email,
-          "telefono"=>$_POST['phone'],
-          "imgPerfil"=> $nombreArchivo,
-          "password" => password_hash($_POST["password1"],PASSWORD_DEFAULT)
-      ];
-      $usuariosFinal = json_encode($usuario);
-      file_put_contents('baseUsuarios.json', $usuariosFinal);
-      //echo 'Registro Exitoso';exit;
-      session_start();
-      $_SESSION["name"]=$usuario["nombre"]." ".$usuario["apellido"];
-      $_SESSION["email"]=$email;
-      header("location:index.php");
+    } catch (\Exception $e) {
+      $baseDatos->rollBack(); echo $e->getMessage();
     }
   }
 }
