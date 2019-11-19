@@ -223,3 +223,76 @@ button.btn.btn-lg.btn-facebook.btn-block.text-uppercase {
   margin-right: auto;
 }
 /* FIN REGISTER */
+
+.carousel-item {
+  height: 80vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  margin-bottom: 50px;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin: 10px;
+  text-indent: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: lightgray;
+  box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);    
+}
+.carousel-indicators .active {
+  width: 48px;
+  height: 48px;
+  margin: 10px;
+  background-color: black;
+}
+
+#carouselExampleIndicators span {
+  background-color: black
+}
+
+/* Pagina para modificar / agregar / eliminar productos */
+
+#add-form {
+  padding-top: 30px;
+}
+
+#button-row {
+  padding-top: 10px;
+}
+
+#add-product {
+  background-color: RGB(0,77,152);
+}
+
+body {
+  color: rgb(255,255,255);
+}
+
+.btn.btn-sm {
+  color: white;
+  text-transform: uppercase;
+}
+
+#mod-product {
+  background-color: RGB(168,19,62);
+}
+
+#collapse-1 {
+  padding-bottom: 30px;
+}
+
+.btn.btn-sm {
+  margin: 26px;
+}
+
+#update-form {
+  padding-bottom: 30px;
+}
