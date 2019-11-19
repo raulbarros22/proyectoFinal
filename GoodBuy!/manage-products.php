@@ -23,7 +23,7 @@
     <?php
 require 'navbarg.php';
 require 'dbConnector.php';
-$db = connectDB();
+$db = $baseDatos;
 $titulo = '';
 $precio = '';
 $descripcion = '';

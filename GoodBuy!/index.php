@@ -12,7 +12,7 @@ require 'head.php';
   <?php
     require 'navbarg.php';
     require 'dbConnector.php';
-    $db = connectDB();
+    $db = $baseDatos;
   ?>
   <!--2- Nav-->
   <div class="container-fluid border-top">

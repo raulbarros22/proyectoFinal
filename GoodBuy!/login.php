@@ -20,28 +20,32 @@ if ($_POST) {
       setcookie("email",$_POST["email"]);
     }
   }
-  $usuarios = file_get_contents("baseUsuarios.json");
-  $usuariosArray = json_decode($usuarios,true);
-  $i=0;
-  while($i<count($usuariosArray)){
-    if($usuariosArray[$i]["email"]==$_POST["email"]){
-      if (!password_verify($_POST["password"],$usuariosArray[$i]["password"])) {
-        $error .= 'Contraseña Incorrecta!! <br>';
-      }else{
-        //bienvenido!!
-        session_start();
-        $_SESSION["email"]=$_POST["email"];
-        $_SESSION["name"]=$usuariosArray[$i]["nombre"]." ".$usuariosArray[$i]["apellido"];
-        header("location:index.php");
-      }
-      break;
+  include("dbConnector.php");
+  
+  $baseDatos->beginTransaction();
+  try {
+    $query="select nombre, apellido, pass from CLIENTES where email='" . $_POST['email']. "'";
+    $consulta=$baseDatos->prepare($query);
+    $consulta->execute();
+    $result=$consulta->fetch();
+    if ($result==NULL) {
+      $error .= 'Usuario Inexistente!! <br>';
+    }else{
+      // var_dump($result);
+      if (!password_verify($_POST["password"],$result["pass"])) {
+            $error .= 'Contraseña Incorrecta!! <br>';
+          }else{
+            session_start();
+                  $_SESSION["email"]=$_POST["email"];
+                  $_SESSION["name"]=$result["nombre"]." ".$result["apellido"];
+                  header("location:index.php");
+          }
     }
-    $i++;
+
+  } catch (\Exception $e) {
+    $baseDatos->rollBack(); echo $e->getMessage();
   }
-  if($i==count($usuariosArray)){
-    $error .= 'Usuario Inexistente!! <br>';
-    $usuarioControl=1;
-  }
+
 }
 
 
