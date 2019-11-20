@@ -20,9 +20,11 @@
 </head>
 
 <body>
-    <?php
+<?php
 require 'navbarg.php';
 require 'dbConnector.php';
+require 'functions.php';
+
 $db = $baseDatos;
 $titulo = '';
 $precio = '';
@@ -31,13 +33,15 @@ $imgURL = '';
 if (isset($_POST) && (count($_POST) > 0)) {
     try {
         if (isset($_POST['form']) && $_POST['form'] == 'form1') {
-            $insert = "INSERT INTO products values (default, now(), now(), '" . $_POST['title'] . "', " . $_POST['price'] . ", './images/" . $_POST['imgURL'] . "', '" . $_POST['description'] . "')";
+            $insert = "INSERT INTO products values (default, now(), now(), '" . $_POST['title'] . "', " . $_POST['price'] . ", './imgs/" . $_FILES['imgURL']['name'] . "', '" . $_POST['description'] . "')";
             $query = $db->prepare($insert);
             $query->execute();
+            guardarArchivo();
         } else if (isset($_POST['form']) && $_POST['form'] == 'form2') {
-            $insert = "UPDATE products SET titulo = '" . $_POST['title'] . "', precio = " . $_POST['price'] . ", imageURL = '" . $_POST['imgURL'] . "', description = '" . $_POST['description'] . "' WHERE id = " . $_POST['id'];
+            $insert = "UPDATE products SET titulo = '" . $_POST['title'] . "', precio = " . $_POST['price'] . ", imageURL = '" . $_FILES['imgURL']['name'] . "', description = '" . $_POST['description'] . "' WHERE id = " . $_POST['id'];
             $query = $db->prepare($insert);
             $query->execute();
+            guardarArchivo();
         } else if (isset($_POST['delete'])) {
             $delete = "DELETE FROM products WHERE id = " . $_POST['id'];
             $query = $db->prepare($delete);
@@ -69,7 +73,7 @@ if (isset($_POST) && (count($_POST) > 0)) {
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <form method="post" action="/proyectoFinal/GoodBuy!/manage-products.php">
+                                <form method="post" action="/proyectoFinal/GoodBuy!/manage-products.php" enctype="multipart/form-data">
                                     <div class="form-group"><label>Titulo</label><input class="form-control" type="text"
                                             name="title" required=""></div>
                                     <div class="form-group"><label>Precio</label><input class="form-control"
