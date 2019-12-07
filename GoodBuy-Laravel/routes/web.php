@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/index',function(){
+Route::get('/',function(){
   return view('index');
 });
 Route::get('/faq',function(){
@@ -31,7 +31,6 @@ Route::get('/contact',function(){
 Route::get('/celulares',function(){
   return view('celulares');
 });
-Route::get('/login',function(){
-  return view('login');
+Route::get('/profile',function(){
+  return view('profile');
 });
-Route::post('/login','ClienteController@login');

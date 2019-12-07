@@ -5,13 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                {{-- <div class="card-header">{{ __('Login') }}</div> --}}
 
                 <div class="card-body">
+
+                  <h3 class="text-center">LOGIN</h3>
+                  <hr class="danger-color-dark">
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -23,9 +27,19 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div> --}}
+                        <div class="md-form">
+                           <i class="fas fa-envelope-open-text prefix"></i>
+                           <label for="e-mail">E-mail</label>
+                           <input type="email" id="e-mail" class="form-control  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                             @error('email')
+                                 <span class="invalid-feedback" role="alert">
+                                     <strong>{{ $message }}</strong>
+                                 </span>
+                             @enderror
                         </div>
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -37,9 +51,18 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div> --}}
+                        <div class="md-form">
+                           <i class="fas fa-pencil-alt prefix"></i>
+                           <label for="password">Contraseña</label>
+                           <input type="password" class="form-control @error('password') is-invalid @enderror"  name="password" required autocomplete="current-password"></input>
+                             @error('password')
+                                 <span class="invalid-feedback" role="alert">
+                                     <strong>{{ $message }}</strong>
+                                 </span>
+                             @enderror
                         </div>
-
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -49,9 +72,12 @@
                                     </label>
                                 </div>
                             </div>
+                        </div> --}}
+                        <div class="custom-control custom-checkbox my-3">
+                            <input type="checkbox" class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <label class="form-check-label" for="remember">Recuerdame</label>
                         </div>
-
-                        <div class="form-group row mb-0">
+                        {{-- <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
@@ -63,6 +89,16 @@
                                     </a>
                                 @endif
                             </div>
+                        </div> --}}
+                        <div class="text-center">
+                          <button type="submit" class="btn btn-lg yellow accent-3" name="button">Ingresar</button>
+                          <div class="text-center">
+                            @if (Route::has('password.request'))
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{ __('Olvidé mi contraseña') }}
+                                </a>
+                            @endif
+                          </div>
                         </div>
                     </form>
                 </div>
