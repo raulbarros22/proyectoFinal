@@ -17,9 +17,14 @@ li{
 body{
  font-family: 'Raleway', sans-serif;
  /* color: black !important; */
-
 }
-
+footer{
+ font-family: 'Raleway', sans-serif;
+ /* color: black !important; */
+}
+div {
+  font-family: 'Raleway', sans-serif;
+}
 
 /* ------ INICIO FAQ ------ */
 #faq {

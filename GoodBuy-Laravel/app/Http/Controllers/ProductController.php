@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Product;
 
-
-class ClienteController extends Controller
+class ProductController extends Controller
 {
-
+    
 }

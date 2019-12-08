@@ -16,6 +16,11 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam|Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,10 +35,10 @@
 
 </head>
 <body>
-    <div id="app">
+    {{-- <div id="app"> --}}
         {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"> --}}
         <nav class="mb-1 navbar navbar-expand-lg navbar-dark  elegant-color-dark">
-            <div class="container">
+            {{-- <div class="container"> --}}
                 {{-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'GoodBuy!') }}
                 </a> --}}
@@ -95,7 +100,7 @@
                           <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                             <a class="dropdown-item" href="{{ route('login') }}" >{{ __('Login') }}</a>
                             @if (Route::has('register'))
-                                <a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="dropdown-item" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                             @endif
                             <a class="dropdown-item" href="/contact">Contacto</a>
                           </div>
@@ -105,8 +110,8 @@
                                 {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a> --}}
-                                <span>{{ Auth::user()->name }}</span>
-                                
+                                <span>{{ Auth::user()->name }}</span><span>{{Auth::user()->surname}}</span>
+
                                 {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> --}}
                                 <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                                   <a class="dropdown-item" href="/profile">Perfil de Usuario</a>
@@ -127,13 +132,13 @@
                       </li>
                     </ul>
                 </div>
-            </div>
+            {{-- </div> --}}
         </nav>
 
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
+    {{-- </div> --}}
     <footer class="section footer-classic bg-image elegant-color-dark">
         <div class="container">
           <div class="row row-30">

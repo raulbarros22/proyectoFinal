@@ -33,4 +33,5 @@ Route::get('/celulares',function(){
 });
 Route::get('/profile',function(){
   return view('profile');
-});
+})->middleware('auth');
+// Route::get('/profile','UserController@profile');

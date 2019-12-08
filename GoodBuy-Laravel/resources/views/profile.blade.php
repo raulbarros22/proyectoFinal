@@ -3,45 +3,60 @@
   Perfil Usuario
 @endsection
 @section('content')
-
-
-
-  <div class="container mt-5">
-    <h2 class="text-center">Perfil de Usuario</h2>
+  <div class="container">
       <div class="row justify-content-center">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-body">
 
-          <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="well well-sm">
-                  <div class="row">
-
-                      <div class="col-sm-6 col-md-4">
-                          {{-- <img src="/images/imgProfiles/{{Auth::user()->avatar}}}" alt="" class="img-rounded img-responsive" width="100%"> --}}
-                      </div>
-                      <div class="col-sm-6 col-md-8">
-                          <h4> {{Auth::user()->name}} {{Auth::user()->surname}}</h4>
-                          <!-- <small><cite title="San Francisco, USA">Rosario, Argentina<i class="fas fa-map-marker px-1"></i></cite></small> -->
-
-                              <i class="fas fa-envelope-open-text prefix px-1"></i><p>{{Auth::user()->email}}</p>
-
-                              <br />
-
-                              <br />
-                              {{-- <h6>Telefono: {{$result["telefono"]}}</h6> --}}
-                              <!-- <i class="far fa-calendar-alt px-1"></i> 24 Junio de 1989</p> -->
-
-
-                      </div>
+                    <h3 class="text-center">Perfil de Usuario</h3>
+                    <hr class="danger-color-dark">
+                      <form method="" action="">
+                          @csrf
+                          <div class="md-form">
+                             <i class="fas fa-user prefix"></i>
+                             <label for="name">Nombre</label>
+                             <input type="text" id="name" class="form-control  @error('name') is-invalid @enderror" name="name" value="{{Auth::user()->name}}" autocomplete="name" autofocus>
+                               @error('name')
+                                   <span class="invalid-feedback" role="alert">
+                                       <strong>{{ $message }}</strong>
+                                   </span>
+                               @enderror
+                          </div>
+                          <div class="md-form">
+                             <i class="fas fa-user prefix"></i>
+                             <label for="surname">Apellido</label>
+                             <input type="text" id="surname" class="form-control  @error('surname') is-invalid @enderror" name="surname" value="{{Auth::user()->surname}}" autocomplete="surname" autofocus>
+                               @error('surname')
+                                   <span class="invalid-feedback" role="alert">
+                                       <strong>{{ $message }}</strong>
+                                   </span>
+                               @enderror
+                          </div>
+                          <div class="md-form">
+                             <i class="fas fa-envelope-open-text prefix"></i>
+                             <label for="e-mail">E-mail</label>
+                             <input type="email" id="e-mail" class="form-control  @error('email') is-invalid @enderror" name="email" value="{{Auth::user()->email}}" autocomplete="email" autofocus>
+                               @error('email')
+                                   <span class="invalid-feedback" role="alert">
+                                       <strong>{{ $message }}</strong>
+                                   </span>
+                               @enderror
+                          </div>
+                          <div class="md-form">
+                             <i class="fas fa-phone-volume prefix"></i>
+                             <label for="name">Telefono</label>
+                             <input type="text" id="telefono" class="form-control  @error('telefono') is-invalid @enderror" name="telefono" value="{{Auth::user()->telefono}}" autocomplete="telefono" autofocus>
+                               @error('telefono')
+                                   <span class="invalid-feedback" role="alert">
+                                       <strong>{{ $message }}</strong>
+                                   </span>
+                               @enderror
+                          </div>
+                      </form>
                   </div>
               </div>
           </div>
       </div>
   </div>
-
-
-
-<section class="fondo view">
-<div class="mask rgba-black-light">
-
-</div>
-</section>
 @endsection

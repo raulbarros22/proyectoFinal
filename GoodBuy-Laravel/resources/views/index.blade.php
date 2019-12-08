@@ -14,7 +14,7 @@
         <a class="btn nav-link text-dark border-right yellow accent-3" href="">AUDIO</a>
       </li>
       <li class="nav-item">
-        <a class="btn nav-link text-dark border-right yellow accent-3" href="celulares.php">SMARTPHONE</a>
+        <a class="btn nav-link text-dark border-right yellow accent-3" href="/celulares">SMARTPHONE</a>
       </li>
       <li class="nav-item">
         <a class="btn nav-link text-dark yellow accent-3" href="">ACCESORIOS</a>
