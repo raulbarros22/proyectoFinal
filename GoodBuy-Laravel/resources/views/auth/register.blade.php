@@ -7,10 +7,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-
-                    <form method="POST" class="text-center border border-light p-5" action="{{ route('register') }}" enctype="multipart/form-data">
+              <h3 class="text-center">REGISTRO</h3>
+              <hr class="danger-color-dark">
+                    <form method="POST" class="text-center border border-light " action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
-                        <p class="h4 mb-4">Registro de usuario</p>
+
 
                         <div class="form-row mb-4">
                             {{-- <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label> --}}
@@ -33,7 +34,27 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-row mb-4">
 
+                            <div class="col">
+                                <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" name="dni" value="{{old('dni')}}" placeholder="DNI" autocomplete="dni" autofocus>
+
+                                @error('dni')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col">
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{old('address')}}" placeholder="Domicilio" autocomplete="address" autofocus>
+
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="form-row mb-4">
                             {{-- <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label> --}}
                             <div class="col">
