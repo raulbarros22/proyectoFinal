@@ -263,3 +263,7 @@ button.btn.btn-lg.btn-facebook.btn-block.text-uppercase {
 #carouselExampleIndicators span {
   background-color: black
 }
+
+main.py-4{
+  padding: 0px !important;
+}

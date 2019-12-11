@@ -26,7 +26,7 @@
           Gusta!</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark border-bottom" href="#!"><i
+        <a class="nav-link text-dark border-bottom" href="/carrito"><i
             class="fas fa-cart-arrow-down prefix px-2"></i>Carrito!</a>
       </li>
     </ul>

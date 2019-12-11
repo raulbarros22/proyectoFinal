@@ -31,6 +31,9 @@ Route::get('/contact',function(){
 Route::get('/celulares',function(){
   return view('celulares');
 });
+Route::get('/carrito',function(){
+  return view('cart');
+});
 Route::get('/profile',function(){
   return view('profile');
 })->middleware('auth');
