@@ -35,3 +35,8 @@ Route::get('/profile',function(){
   return view('profile');
 })->middleware('auth');
 // Route::get('/profile','UserController@profile');
+Route::post('/abmProducts','ProductController@search');
+Route::get('/abmProducts',function(){
+  return view('abmProducts');
+});
+Route::post('/agregar','ProductController@guardarArchivo');
