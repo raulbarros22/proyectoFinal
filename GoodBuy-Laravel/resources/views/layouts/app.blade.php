@@ -21,11 +21,10 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 
   <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/Collapsible-sidebar-left-or-right--Content-overlay.css">
   <link rel="stylesheet" href="/css/Header-Dark.css">
-  <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/Vertical-Mobile-Collapsible-Menu.css">
-  <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/smoothproducts.css">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
 
