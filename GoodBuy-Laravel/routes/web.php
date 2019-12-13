@@ -51,3 +51,7 @@ Route::get('modificar/{result}',function($result){
 });
 Route::put('/modificar','ProductController@update');
 Route::delete('/borrar','ProductController@destroy');
+Route::get('/exito/{r}',function($r){
+  $vac=compact('r');
+  return view('exito',$vac);
+});
