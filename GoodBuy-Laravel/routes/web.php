@@ -37,9 +37,17 @@ Route::get('/carrito',function(){
 Route::get('/profile',function(){
   return view('profile');
 })->middleware('auth');
-// Route::get('/profile','UserController@profile');
-Route::post('/abmProducts','ProductController@search');
+
 Route::get('/abmProducts',function(){
   return view('abmProducts');
 });
-Route::post('/agregar','ProductController@guardarArchivo');
+// Route::post('/abmProducts','ProductController@search');
+
+Route::post('/agregar','ProductController@store');
+Route::get('/modificar','ProductController@search');
+Route::get('modificar/{result}',function($result){
+  $vac=compact('result');
+  return view('bmProducts',$vac);
+});
+Route::put('/modificar','ProductController@update');
+Route::delete('/borrar','ProductController@destroy');

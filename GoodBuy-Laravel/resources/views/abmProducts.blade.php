@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('titulo')
-  Home
+  ABM Productos
 @endsection
 @section('content')
   <section id="abm">
@@ -12,22 +12,41 @@
                   <div class="container">
                       <div class="row">
                           <div class="col">
+                            @if (count($errors)>0)
+                              <div class="alert alert-danger">
+                                <ul>
+                                  @foreach ($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                  @endforeach
+                                </ul>
+                              </div>
+                            @endif
                               <form method="post" action="/agregar" enctype="multipart/form-data">
                                   @csrf
-                                  <div class="form-group"><label>Titulo</label><input class="form-control" type="text"
-                                          name="title" required=""></div>
-                                  <div class="form-group"><label>Precio</label><input class="form-control"
-                                          type="number" step=".01" name="price" required=""></div>
-                                  <div class="form-group"><label>Descripción</label><textarea class="form-control"
-                                          name="description" required=""></textarea></div>
-                                  <div class="form-group"><label>Imagen</label><input class="d-flex" type="file"
-                                          name="img" required="" accept="image/*"></div>
+                                  <div class="form-row mb-4">
+                                    <label>Titulo</label>
+                                    <input class="form-control" type="text" name="title" required="">
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>Precio</label>
+                                    <input class="form-control" type="number" step=".01" name="price" required="">
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>Descripción</label>
+                                    <textarea class="form-control" name="description" required=""></textarea>
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>Imagen<br></label>
+                                    <input class="d-flex" type="file" name="img" required="" accept="image/*">
+                                  </div>
                                   <div><input type="hidden" name="form" value="form1"></div>
                                   <div class="form-row" id="button-row">
-                                      <div class="col"><button class="btn btn-success"
-                                              type="submit">Añadir</button><button class="btn btn-danger" type="reset"
-                                              style="margin-left: 12px;">Resetear</button></div>
+                                      <div class="col">
+                                        <button class="btn btn-success" type="submit">Añadir</button>
+                                        <button class="btn btn-danger" type="reset" style="margin-left: 12px;">Resetear</button>
+                                      </div>
                                   </div>
+
                               </form>
                           </div>
                       </div>
@@ -45,43 +64,32 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <form action="/abmProducts" method="POST">
+                                <form action="/modificar" method="get">
                                   @csrf
-                                    <div class="form-group"><input class="form-control" type="search"
+                                    <div class="form-row mb-4"><input class="form-control" type="search"
                                             data-toggle="tooltip" data-bs-tooltip="" data-placement="bottom"
                                             placeholder="Buscar" name="buscador"
                                             title="Busque un producto para modificarlo o eliminarlo"></div>
                                 </form>
                                 @isset($result)
-                                  <form method="post" action="/abmProducts/modificar">
-                                    @csrf
-                                      <div class="form-group"><label>Titulo</label><input class="form-control" type="text"
+                                  <h3>Resultados de la busqueda:</h3>
+                                  <div class="card">
 
-                                      name="title" value='{{$result[0]['titulo']}}'></div>
+                                  <ul>
+                                  @forelse ($result as $result)
+                                    <a href="/modificar/{{$result}}">
+                                     <li class="list-group-item">{{$result['titulo']}}</li>
+                                     </a>
+                                  @empty
+                                    <li class="list-group-item" style="color: black">No hay productos con ese nombre!!</li>
 
-                                  </form>
-                                  <div class="form-group"><label>Precio</label><input class="form-control"
-                                          type="number"  name="price" value='{{$result[0]['precio']}}'></div>
-                                  <div class="form-group"><label>Descripción</label><textarea class="form-control"
-                                   name="description">{{$result[0]['description']}}</textarea></div>
-                                  <div class="form-group"><label>Imagen</label><input class="d-flex" type="file"
-                                   name="imgURL"></div>
-                                  <div><input type="hidden" name="form" value="form2"></div>
-                                  <div><input type="hidden" name="id" value="{{$result[0]['id']}}"></div>
-                                  <div class="form-row" id="button-row">
-                                      <div class="col"><button class="btn btn-success"
-                                              type="submit">Modificar</button></div>
+                                  @endforelse
+                                  </ul>
                                   </div>
-                                  <form method="post" action="/borrar">
-                                  <div><input type="hidden" name="delete" value="true"></div>
-                                  <div><input type="hidden" name="id" value="{{$result[0]['id']}}"></div>
-                                  <button class="btn btn-danger"
-                                                  type="submit">Eliminar</button>
-                                  </form>
+
                                 @endisset
 
-
-                            </div>
+                              </div>
                         </div>
                     </div>
                 </section>
