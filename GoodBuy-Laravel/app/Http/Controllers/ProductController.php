@@ -39,7 +39,8 @@ class ProductController extends Controller
     $product->precio=$req['price'];
     $product->description=$req['description'];
     $product->save();
-    return redirect("abmProducts");
+    $r=1;
+    return redirect("exito/$r");
   }
 
   public function update(Request $form){
@@ -68,15 +69,16 @@ class ProductController extends Controller
     $result->precio=$form['price'];
     $result->description=$form['description'];
     $result->save();
-
-    return redirect('abmProducts');
+    $r=0;
+    return redirect("exito/$r");
   }
 
   public function destroy(Request $form){
     $id=$form['id'];
     $product=Product::find($id);
     $product->delete();
-    return redirect('abmProducts');
+    $r=-1;
+    return redirect("exito/$r");
   }
 
 }

@@ -25,15 +25,15 @@
                                   @csrf
                                   <div class="form-row mb-4">
                                     <label>Titulo</label>
-                                    <input class="form-control" type="text" name="title" required="">
+                                    <input class="form-control" type="text" name="title" required="" value="{{old('title')}}">
                                   </div>
                                   <div class="form-row mb-4">
                                     <label>Precio</label>
-                                    <input class="form-control" type="number" step=".01" name="price" required="">
+                                    <input class="form-control" type="number" step=".01" name="price" required="" value="{{old('price')}}">
                                   </div>
                                   <div class="form-row mb-4">
                                     <label>Descripción</label>
-                                    <textarea class="form-control" name="description" required=""></textarea>
+                                    <textarea class="form-control" name="description" required="" value="{{old('description')}}"></textarea>
                                   </div>
                                   <div class="form-row mb-4">
                                     <label>Imagen<br></label>
