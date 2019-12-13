@@ -29,13 +29,13 @@
                                 @csrf
                                   <div class="form-row mb-4">
                                     <label>Titulo</label>
-                                    <input class="form-control" type="text" name="title" value='{{$result->titulo}}' required=""></div>
+                                    <input class="form-control" type="text" name="title" value="{{old('title')}}" placeholder='{{$result->titulo}}' required=""></div>
                                   <div class="form-row mb-4">
                                     <label>Precio</label>
-                                    <input class="form-control" type="number"  step=".01" name="price" value='{{$result->precio}}' required=""></div>
+                                    <input class="form-control" type="number"  step=".01" name="price" value="{{old('price')}}" placeholder='{{$result->precio}}' required=""></div>
                                   <div class="form-row mb-4">
                                     <label>Descripción</label>
-                                    <textarea class="form-control" name="description" required="">{{$result->description}}</textarea>
+                                    <textarea class="form-control" name="description" required="" placeholder="{{$result->description}}">{{old('description')}}</textarea>
                                   </div>
                                    <div class="form-row mb-4">
                                      <label>Imagen Original</label>
@@ -60,6 +60,7 @@
                               <button class="btn btn-danger"
                                               type="submit">Eliminar</button>
                               </form>
+                              <a class="btn btn-primary btn-lg" href="/abmProducts" role="button">VOLVER</a>
                         </div>
                     </div>
                 </div>
