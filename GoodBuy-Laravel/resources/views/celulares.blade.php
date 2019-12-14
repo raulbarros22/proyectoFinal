@@ -11,7 +11,7 @@
           <div class="card-body">
             <h3 class="card-title">LG K11</h3>
              <p class="card-text warning"><h4>$23500</h4></p>
-        <h5 class="danger-color">Aprovecha la increible oferta!</h5>
+             <button type="button" class="btn btn-light"><a style="text-decoration: none" href="/product/1">Ver Producto</a></button>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
           <div class="card-body">
             <h3 class="card-title">Huawei Y9</h3>
              <p class="card-text warning"><h4>$34500</h4></p>
-             <h5 class="danger-color">Aprovecha la increible oferta!</h5>
+             <button type="button" class="btn btn-light"><a style="text-decoration: none" href="/product/1">Ver Producto</a></button>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
           <div class="card-body">
          <h3 class="card-title">Motorola G7</h3>
           <p class="card-text warning"><h4>$19500</h4></p>
-          <h5 class="danger-color">Aprovecha la increible oferta!</h5>
+          <button type="button" class="btn btn-light"><a style="text-decoration: none" href="/product/1">Ver Producto</a></button>
         </div>
       </div>
     </div>
