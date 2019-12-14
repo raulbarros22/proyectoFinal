@@ -8,12 +8,20 @@ use App\Product;
 
 class ProductController extends Controller
 {
+
   public function search(Request $req){
     $busq=$req['buscador'];
     $result=Product::where('titulo', 'like', $busq . '%') -> get();
     $vac=compact('result');
     return view('abmProducts',$vac);
   }
+
+  public function modify($id){
+    $result = Product::find($id);
+    $vac = compact('result');
+    return view('bmProducts', $vac);
+  }
+
   public function store(Request $req){
     $reglas=[
       'title'=>'string | min:3',
@@ -31,7 +39,7 @@ class ProductController extends Controller
     $this->validate($req,$reglas,$mensajes);
     $product=new Product();
 
-    $ruta=$req->file('img')->store("public");
+    $ruta=$req->file('img')->store("images");
     $nomgreArchivo=basename($ruta);
     $product->imageURL=$nomgreArchivo;
 
@@ -60,8 +68,8 @@ class ProductController extends Controller
 
     $result=Product::find($form['id']);
 
-    $ruta=$form->file('image')->store("public");
-    $nomgreArchivo=basename($ruta);
+    $ruta=$form->file('image')->store("images");
+    $nomgreArchivo= '/images/' . basename($ruta);
     $result->imageURL=$nomgreArchivo;
 
     $result->titulo=$form['title'];

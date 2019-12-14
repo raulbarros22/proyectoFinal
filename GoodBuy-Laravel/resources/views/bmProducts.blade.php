@@ -38,12 +38,12 @@
                                     <textarea class="form-control" name="description" required="">{{$result->description}}</textarea>
                                   </div>
                                    <div class="form-row mb-4">
-                                     <label>Imagen Original</label>
-                                     <img src="/storage/{{$result->imageURL}}" alt="" width="15%">
+                                     <label style="margin-right: 10px">Imagen Original</label>
+                                     <img src="{{$result->imageURL}}" alt="" width="15%">
                                    </div>
                                   <div class="form-row mb-4">
                                     <label>Nueva Imagen</label>
-                                    <input class="d-flex" type="file" name="image" required="" accept="image/*">
+                                    <input class="d-flex" type="file" name="image" accept="image/*">
                                   </div>
                                   <div><input type="hidden" name="_method" value="PUT"></div>
                                   <div><input type="hidden" name="id" value="{{$result->id}}"></div>
