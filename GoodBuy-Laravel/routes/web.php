@@ -41,6 +41,8 @@ Route::get('/profile',function(){
 Route::get('/abmProducts',function(){
   return view('abmProducts');
 });
+Route::get('/product/{id}', 'ProductController@detail');
+Route::post('/addToCart/{id}', 'ProductController@addToCart');
 Route::post('/agregar','ProductController@store');
 Route::get('/modificar','ProductController@search');
 Route::get('/modificar/{id}','ProductController@modify');

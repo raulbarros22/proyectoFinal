@@ -89,4 +89,15 @@ class ProductController extends Controller
     return redirect("exito/$r");
   }
 
+  public function detail($id){
+    $result = Product::find($id);
+    $vac = compact('result');
+    return view('productDetails', $vac);
+  }
+
+  public function addToCart($id){
+    
+    return redirect('carrito');
+  }
+
 }
