@@ -9,8 +9,8 @@ Registro
             <div class="card">
                 <h3 class="text-center">REGISTRO</h3>
                 <hr class="danger-color-dark">
-                <form method="POST" class="text-center border border-light " action="{{ route('register') }}"
-                    enctype="multipart/form-data">
+                <form id="form-register" method="POST" class="text-center border border-light " action="{{ route('register') }}"
+                    enctype="multipart/form-data" onSubmit = "return validar(this)" >
                     @csrf
 
 
@@ -67,7 +67,7 @@ Registro
                         {{-- <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
                         --}}
                         <div class="col">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                            <input id="email" type="text" class="form-control @error('email') is-invalid @enderror"
                                 name="email" value="{{ old('email') }}" placeholder="Email" autocomplete="email">
 
                             @error('email')

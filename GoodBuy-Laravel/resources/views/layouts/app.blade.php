@@ -188,6 +188,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
   <script src="/js/smoothproducts.min.js"></script>
   <script src="/js/theme.js"></script>
+  <script src="/js/register.js" type="text/javascript"></script>
 </body>
 
 </html>
