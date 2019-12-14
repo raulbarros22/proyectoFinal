@@ -41,14 +41,9 @@ Route::get('/profile',function(){
 Route::get('/abmProducts',function(){
   return view('abmProducts');
 });
-// Route::post('/abmProducts','ProductController@search');
-
 Route::post('/agregar','ProductController@store');
 Route::get('/modificar','ProductController@search');
-Route::get('modificar/{result}',function($result){
-  $vac=compact('result');
-  return view('bmProducts',$vac);
-});
+Route::get('/modificar/{id}','ProductController@modify');
 Route::put('/modificar','ProductController@update');
 Route::delete('/borrar','ProductController@destroy');
 Route::get('/exito/{r}',function($r){

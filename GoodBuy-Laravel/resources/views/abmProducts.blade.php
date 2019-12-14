@@ -75,9 +75,9 @@
                                   <h3>Resultados de la busqueda:</h3>
                                   <div class="card">
 
-                                  <ul>
+                                  <ul class="list-group">
                                   @forelse ($result as $result)
-                                    <a href="/modificar/{{$result}}">
+                                    <a href="/modificar/{{$result['id']}}">
                                      <li class="list-group-item">{{$result['titulo']}}</li>
                                      </a>
                                   @empty
