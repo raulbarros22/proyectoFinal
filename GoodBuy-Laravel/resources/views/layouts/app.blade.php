@@ -40,7 +40,7 @@
 <body>
   {{-- <div id="app"> --}}
   {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"> --}}
-  <nav class="mb-1 navbar navbar-expand-lg navbar-dark  elegant-color-dark">
+  <nav class="mb-1 navbar navbar-expand-lg navbar-dark  elegant-color-dark" style="margin-bottom:0px !important">
     {{-- <div class="container"> --}}
     {{-- <a class="navbar-brand" href="{{ url('/') }}">
     {{ config('app.name', 'GoodBuy!') }}
