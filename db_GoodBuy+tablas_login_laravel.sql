@@ -82,4 +82,4 @@ CREATE TABLE `goodbuy_db`.`cart_product` (
     ON UPDATE NO ACTION);
 
 
-INSERT INTO products values (DEFAULT, now(), now(), 'Iphone 11 Pro Max', 1199.99, './images/apple-iphone-11promax.jpg', "Iphone 11 Pro Max");
+INSERT INTO products values (DEFAULT, now(), now(), 'Iphone 11 Pro Max', 1199.99, '/images/iphone11-430.jpg', "A new dual‑camera system captures more of what you see and love. The fastest chip ever in a smartphone and all‑day battery life let you do more and charge less. And the highest‑quality video in a smartphone, so your memories look better than ever.");
