@@ -28,9 +28,6 @@ Route::get('/faq',function(){
 Route::get('/contact',function(){
   return view('contact');
 });
-Route::get('/celulares',function(){
-  return view('celulares');
-});
 Route::get('/carrito',function(){
   return view('cart');
 });
@@ -41,6 +38,7 @@ Route::get('/profile',function(){
 Route::get('/abmProducts',function(){
   return view('abmProducts');
 });
+Route::get('/celulares', 'ProductController@list');
 Route::get('/product/{id}', 'ProductController@detail');
 Route::post('/addToCart/{id}', 'ProductController@addToCart');
 Route::post('/agregar','ProductController@store');
