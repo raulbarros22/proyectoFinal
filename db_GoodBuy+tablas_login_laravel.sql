@@ -15,6 +15,12 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
 
+ALTER TABLE `goodbuy_db`.`products` 
+ADD COLUMN `display_size` VARCHAR(15) NULL DEFAULT 'No especificado' `description`,
+ADD COLUMN `camara` VARCHAR(15) NULL DEFAULT 'No especificado' AFTER `display_size`,
+ADD COLUMN `RAM` VARCHAR(15) NULL DEFAULT 'No especificado' AFTER `camara`,
+ADD COLUMN `OS` VARCHAR(15) NULL DEFAULT 'No especificado' AFTER `RAM`;
+
 CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -83,3 +89,4 @@ CREATE TABLE `goodbuy_db`.`cart_product` (
 
 
 INSERT INTO products values (DEFAULT, now(), now(), 'Iphone 11 Pro Max', 1199.99, '/images/iphone11-430.jpg', "A new dual‑camera system captures more of what you see and love. The fastest chip ever in a smartphone and all‑day battery life let you do more and charge less. And the highest‑quality video in a smartphone, so your memories look better than ever.");
+INSERT INTO products values(DEFAULT, now(), now(), 'Motorola One Zoom ', '499.99', '/images/Motorola-One-Zoom-430.jpg', 'Motorola One Zoom 64GB', '5.8', '48MP', '4GB', 'Android 10');

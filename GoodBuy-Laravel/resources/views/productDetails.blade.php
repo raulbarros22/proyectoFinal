@@ -45,36 +45,28 @@ Detalle Producto
                     <div>
                         <ul class="nav nav-tabs" id="myTab">
                             <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab"
-                                    id="description-tab" href="#description">Descripción</a></li>
-                            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab"
                                     id="specifications-tabs" href="#specifications">Especificaciones</a></li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane active fade show description" role="tabpanel" id="description">
-                                <p><strong>A new dual‑camera system captures more of what you see and love. The fastest
-                                        chip ever in a smartphone and all‑day battery life let you do more and charge
-                                        less. And the highest‑quality video in a smartphone, so your memories look
-                                        better&nbsp;than&nbsp;ever.</strong><br></p>
-                            </div>
-                            <div class="tab-pane fade show specifications" role="tabpanel" id="specifications">
+                            <div class="tab-pane active fade show specifications" role="tabpanel" id="specifications">
                                 <div class="table-responsive table-bordered">
                                     <table class="table table-bordered">
                                         <tbody>
                                             <tr>
-                                                <td class="stat">Display</td>
-                                                <td>5.2"</td>
+                                                <td class="stat">Display (inches)</td>
+                                                <td>{{$result->display_size}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="stat">Camera</td>
-                                                <td>12MP</td>
+                                                <td>{{$result->camara}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="stat">RAM</td>
-                                                <td>4GB</td>
+                                                <td>{{$result->RAM}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="stat">OS</td>
-                                                <td>iOS</td>
+                                                <td>{{$result->OS}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
