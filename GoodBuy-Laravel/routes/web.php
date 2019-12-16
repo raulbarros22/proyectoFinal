@@ -28,9 +28,7 @@ Route::get('/faq',function(){
 Route::get('/contact',function(){
   return view('contact');
 });
-Route::get('/carrito',function(){
-  return view('cart');
-});
+Route::get('/carrito', 'CartController@search')->middleware('auth');
 Route::get('/profile',function(){
   return view('profile');
 })->middleware('auth');

@@ -53,7 +53,6 @@ CREATE TABLE `carts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp(),
-  `product_id` int DEFAULT NULL,
   `total_price` double NOT NULL DEFAULT 0,
   `subtotal` double NOT NULL DEFAULT 0,
   `discounts` double NOT NULL DEFAULT 0,
@@ -81,4 +80,4 @@ CREATE TABLE `goodbuy_db`.`cart_product` (
 
 
 INSERT INTO products values (DEFAULT, now(), now(), 'Iphone 11 Pro Max', 1199.99, '/images/iphone11-430.jpg', "A new dual‑camera system captures more of what you see and love. The fastest chip ever in a smartphone and all‑day battery life let you do more and charge less. And the highest‑quality video in a smartphone, so your memories look better than ever.");
-INSERT INTO products values(DEFAULT, now(), now(), 'Motorola One Zoom ', '499.99', '/images/Motorola-One-Zoom-430.jpg', 'Motorola One Zoom 64GB', '5.8', '48MP', '4GB', 'Android 10');
+INSERT INTO products values(DEFAULT, now(), now(), 'Motorola One Zoom ', 499.99, '/images/Motorola-One-Zoom-430.jpg', 'Motorola One Zoom 64GB', '5.8', '48MP', '4GB', 'Android 10');
