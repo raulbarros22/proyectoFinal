@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Product;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -96,11 +97,6 @@ class ProductController extends Controller
     }
     $vac = compact('result');
     return view('productDetails', $vac);
-  }
-
-  public function addToCart($id){
-    
-    return redirect('carrito');
   }
 
   public function list(){
