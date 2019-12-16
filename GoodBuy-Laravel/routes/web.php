@@ -38,7 +38,7 @@ Route::get('/abmProducts',function(){
 });
 Route::get('/celulares', 'ProductController@list');
 Route::get('/product/{id}', 'ProductController@detail');
-Route::post('/addToCart/{id}', 'ProductController@addToCart');
+Route::post('/addToCart/{id}', 'CartController@addToCart');
 Route::post('/agregar','ProductController@store');
 Route::get('/modificar','ProductController@search');
 Route::get('/modificar/{id}','ProductController@modify');

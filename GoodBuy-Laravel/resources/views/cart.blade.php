@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('titulo')
-Registro
+Carrito
 @endsection
 @section('content')
 @php
@@ -17,13 +17,13 @@ Registro
                     <div class="row no-gutters">
                         <div class="col-md-12 col-lg-8">
                             <div class="items">
-                                @foreach ($products as $product)
+                                @forelse ($products as $product)
                                 <div class="product">
                                     <div class="row justify-content-center align-items-center">
                                         <div class="col-md-3">
                                             <div class="product-image"><img class="img-fluid d-block mx-auto image" src={{$product->imageURL}}></div>
                                         </div>
-                                        <div class="col-md-5 product-info"><a class="product-name" href="#">{{$product->titulo}}&nbsp;</a>
+                                        <div class="col-md-5 product-info"><a class="product-name" href="/product/{{$product->id}}">{{$product->titulo}}&nbsp;</a>
                                             <div class="product-specs">
                                                 <div><span>Display:&nbsp;</span><span class="value">{{$product->display_size}} inch</span></div>
                                                 <div><span>RAM:&nbsp;</span><span class="value">{{$product->RAM}}</span></div>
@@ -34,7 +34,14 @@ Registro
                                         <div class="col-6 col-md-2 price"><span>${{$product->precio}}</span></div>
                                     </div>
                                 </div>
-                                @endforeach
+                                @empty
+                                <div class="product">
+                                    <div class="row justify-content-center align-items-center">
+                                        <h4>Carrtio Vacio</h4>
+                                        <p>Agregue <a href="/celulares">productos</a> al carrito</p>
+                                    </div>
+                                </div>
+                                @endforelse
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-4">

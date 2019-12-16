@@ -17,6 +17,13 @@ class CartController extends Controller
         return view('cart',$vac);
       }
 
+      public function addToCart($id){
+        $user = Auth::user();
+        $cart = Cart::find($user->cart_id);
+        $cart->productos()->attach($id);
+        return redirect('carrito');
+      }
+
       public static function determineTotal($productos){
         $total = 0;
         foreach($productos as $product){

@@ -2,24 +2,20 @@ DROP DATABASE IF EXISTS goodBuy_db;
 CREATE DATABASE goodBuy_db;
 USE goodBuy_db;
 
-CREATE TABLE `goodbuy_db`.`products` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `created_at` TIMESTAMP NULL DEFAULT NULL,
-  `updated_at` TIMESTAMP NULL DEFAULT NULL,
-  `titulo` VARCHAR(45) NOT NULL,
-  `precio` DOUBLE NOT NULL,
-  `imageURL` VARCHAR(150) NOT NULL,
-  `description` VARCHAR(300) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
-
-ALTER TABLE `goodbuy_db`.`products` 
-ADD COLUMN `display_size` VARCHAR(15) NULL DEFAULT 'No especificado' `description`,
-ADD COLUMN `camara` VARCHAR(15) NULL DEFAULT 'No especificado' AFTER `display_size`,
-ADD COLUMN `RAM` VARCHAR(15) NULL DEFAULT 'No especificado' AFTER `camara`,
-ADD COLUMN `OS` VARCHAR(15) NULL DEFAULT 'No especificado' AFTER `RAM`;
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `titulo` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `precio` double NOT NULL,
+  `imageURL` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `display_size` varchar(15) COLLATE utf8_unicode_ci DEFAULT 'No especificado',
+  `camara` varchar(15) COLLATE utf8_unicode_ci DEFAULT 'No especificado',
+  `RAM` varchar(15) COLLATE utf8_unicode_ci DEFAULT 'No especificado',
+  `OS` varchar(15) COLLATE utf8_unicode_ci DEFAULT 'No especificado',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -79,5 +75,5 @@ CREATE TABLE `goodbuy_db`.`cart_product` (
     ON UPDATE NO ACTION);
 
 
-INSERT INTO products values (DEFAULT, now(), now(), 'Iphone 11 Pro Max', 1199.99, '/images/iphone11-430.jpg', "A new dual‑camera system captures more of what you see and love. The fastest chip ever in a smartphone and all‑day battery life let you do more and charge less. And the highest‑quality video in a smartphone, so your memories look better than ever.");
-INSERT INTO products values(DEFAULT, now(), now(), 'Motorola One Zoom ', 499.99, '/images/Motorola-One-Zoom-430.jpg', 'Motorola One Zoom 64GB', '5.8', '48MP', '4GB', 'Android 10');
+INSERT INTO products values (DEFAULT, now(), now(), 'Iphone 11 Pro Max', '1199.99', '/images/iphone11-430.jpg', 'A new dual‑camera system captures more of what you see and love. The fastest chip ever in a smartphone and all‑day battery life let you do more and charge less. And the highest‑quality video in a smartphone, so your memories look better than ever.', '6.3', '3 X 12MP', '4GB', 'IOS 13.3');
+INSERT INTO products values (DEFAULT, now(), now(), 'Motorola One Zoom ', '499.99', '/images/Motorola-One-Zoom-430.jpg', 'Motorola One Zoom 64GB', '5.8', '48MP', '4GB', 'Android 10');

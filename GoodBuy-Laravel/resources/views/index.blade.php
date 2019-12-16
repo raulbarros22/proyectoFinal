@@ -7,24 +7,24 @@
   <!--2- Nav-->
   <div class="container-fluid border-top">
     <ul class="nav justify-content-center">
-      <li class="nav-item">
+{{--       <li class="nav-item">
         <a class="btn nav-link text-dark border-right yellow accent-3" href="">CAMARAS</a>
       </li>
       <li class="nav-item">
         <a class="btn nav-link text-dark border-right yellow accent-3" href="">AUDIO</a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="btn nav-link text-dark border-right yellow accent-3" href="/celulares">SMARTPHONE</a>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="btn nav-link text-dark yellow accent-3" href="">ACCESORIOS</a>
-      </li>
+      </li> --}}
     </ul>
     <ul class="nav justify-content-center">
-      <li class="nav-item">
+  {{--     <li class="nav-item">
         <a class="nav-link text-dark border-right border-bottom" href="#!"><i class="fas fa-heart prefix px-2"></i>Me
           Gusta!</a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link text-dark border-bottom" href="/carrito"><i
             class="fas fa-cart-arrow-down prefix px-2"></i>Carrito!</a>

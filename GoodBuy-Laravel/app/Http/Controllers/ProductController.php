@@ -99,13 +99,6 @@ class ProductController extends Controller
     return view('productDetails', $vac);
   }
 
-  public function addToCart($id){
-    $user = Auth::user();
-    $cart = Cart::find($user->cart_id);
-    $cart->product_id = $id;
-    return redirect('carrito');
-  }
-
   public function list(){
     $result = Product::all();
     $vac = compact('result');
