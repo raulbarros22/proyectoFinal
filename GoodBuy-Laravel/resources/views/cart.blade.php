@@ -38,6 +38,8 @@ Carrito
                                 <div class="product">
                                     <div class="row justify-content-center align-items-center">
                                         <h4>Carrtio Vacio</h4>
+                                    </div>
+                                    <div class="row justify-content-center align-items-center">
                                         <p>Agregue <a href="/celulares">productos</a> al carrito</p>
                                     </div>
                                 </div>
