@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Cart;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -72,7 +73,13 @@ class RegisterController extends Controller
       // $ruta=$data->file('avatar')->store("public");
       // $nomgreArchivo=basename($ruta);
 
-        return User::create([
+      $cart = Cart::create([
+        'total_price' => 0,
+        'subtotal' => 0,
+        'discounts' => 0,
+        'shipping_cost' => 0
+      ]);
+      $user = User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
             'email' => $data['email'],
@@ -80,7 +87,9 @@ class RegisterController extends Controller
             'telefono'=>$data['telefono'],
             'dni'=>$data['dni'],
             'address'=>$data['address'],
+            'cart_id'=>$cart->getAttributes()['id']
             // 'avatar'=>basename($data->file('avatar')->store('public')),
         ]);
+        return $user;
     }
 }

@@ -40,7 +40,7 @@ class ProductController extends Controller
     $product=new Product();
 
     $ruta=$req->file('img')->store("images");
-    $nomgreArchivo=basename($ruta);
+    $nomgreArchivo= '/images/' . basename($ruta);
     $product->imageURL=$nomgreArchivo;
 
     $product->titulo=$req['title'];
@@ -91,6 +91,9 @@ class ProductController extends Controller
 
   public function detail($id){
     $result = Product::find($id);
+    if($result == null){
+      return view('notFound');
+    }
     $vac = compact('result');
     return view('productDetails', $vac);
   }
@@ -98,6 +101,12 @@ class ProductController extends Controller
   public function addToCart($id){
     
     return redirect('carrito');
+  }
+
+  public function list(){
+    $result = Product::all();
+    $vac = compact('result');
+    return view('celulares', $vac);
   }
 
 }
