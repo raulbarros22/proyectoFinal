@@ -29,21 +29,39 @@
                                 @csrf
                                   <div class="form-row mb-4">
                                     <label>Titulo</label>
-                                    <input class="form-control" type="text" name="title" value="{{old('title')}}" placeholder='{{$result->titulo}}' required=""></div>
+                                    <input class="form-control" type="text" name="title" value="{{old('title')}}" placeholder='{{$result->titulo}}' required="">
+                                  </div>
                                   <div class="form-row mb-4">
                                     <label>Precio</label>
-                                    <input class="form-control" type="number"  step=".01" name="price" value="{{old('price')}}" placeholder='{{$result->precio}}' required=""></div>
+                                    <input class="form-control" type="number"  step=".01" name="price" value="{{old('price')}}" placeholder='{{$result->precio}}' required="">
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>Tamaño Pantalla</label>
+                                    <input class="form-control" type="text" name="display_size" value="{{old('display_size')}}" placeholder='{{$result->display_size}}' required="">
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>Camara</label>
+                                    <input class="form-control" type="text" name="camara" value="{{old('camara')}}" placeholder='{{$result->camara}}' required="">
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>RAM</label>
+                                    <input class="form-control" type="text" name="RAM" value="{{old('RAM')}}" placeholder='{{$result->RAM}}' required="">
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>OS</label>
+                                    <input class="form-control" type="text" name="OS" value="{{old('OS')}}" placeholder='{{$result->OS}}' required="">
+                                  </div>
                                   <div class="form-row mb-4">
                                     <label>Descripción</label>
                                     <textarea class="form-control" name="description" required="" placeholder="{{$result->description}}">{{old('description')}}</textarea>
                                   </div>
                                    <div class="form-row mb-4">
-                                     <label>Imagen Original</label>
-                                     <img src="/storage/{{$result->imageURL}}" alt="" width="15%">
+                                     <label style="margin-right: 10px">Imagen Original</label>
+                                     <img src="{{$result->imageURL}}" alt="" width="15%">
                                    </div>
                                   <div class="form-row mb-4">
                                     <label>Nueva Imagen</label>
-                                    <input class="d-flex" type="file" name="image" required="" accept="image/*">
+                                    <input class="d-flex" type="file" name="image" accept="image/*">
                                   </div>
                                   <div><input type="hidden" name="_method" value="PUT"></div>
                                   <div><input type="hidden" name="id" value="{{$result->id}}"></div>

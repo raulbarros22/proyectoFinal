@@ -5,20 +5,33 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Product;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+
   public function search(Request $req){
     $busq=$req['buscador'];
     $result=Product::where('titulo', 'like', $busq . '%') -> get();
     $vac=compact('result');
     return view('abmProducts',$vac);
   }
+
+  public function modify($id){
+    $result = Product::find($id);
+    $vac = compact('result');
+    return view('bmProducts', $vac);
+  }
+
   public function store(Request $req){
     $reglas=[
       'title'=>'string | min:3',
       'price'=>'numeric',
       'description'=>'string | min:3',
+      'display_size'=>'string',
+      'camara'=>'string',
+      'RAM'=>'string',
+      'OS'=>'string',
       'img'=>'file'
     ];
     $mensajes=[
@@ -31,12 +44,16 @@ class ProductController extends Controller
     $this->validate($req,$reglas,$mensajes);
     $product=new Product();
 
-    $ruta=$req->file('img')->store("public");
-    $nomgreArchivo=basename($ruta);
+    $ruta=$req->file('img')->store("images");
+    $nomgreArchivo= '/images/' . basename($ruta);
     $product->imageURL=$nomgreArchivo;
 
     $product->titulo=$req['title'];
     $product->precio=$req['price'];
+    $product->display_size=$req['display_size'];
+    $product->camara=$req['camara'];
+    $product->RAM=$req['RAM'];
+    $product->OS=$req['OS'];
     $product->description=$req['description'];
     $product->save();
     $r=1;
@@ -48,6 +65,10 @@ class ProductController extends Controller
       'title'=>'string | min:3',
       'price'=>'numeric',
       'description'=>'string | min:3',
+      'display_size'=>'string',
+      'camara'=>'string',
+      'RAM'=>'string',
+      'OS'=>'string',
       'img'=>'file'
     ];
     $mensajes=[
@@ -61,12 +82,16 @@ class ProductController extends Controller
 
     $result=Product::find($form['id']);
 
-    $ruta=$form->file('image')->store("public");
-    $nomgreArchivo=basename($ruta);
+    $ruta=$form->file('image')->store("images");
+    $nomgreArchivo= '/images/' . basename($ruta);
     $result->imageURL=$nomgreArchivo;
 
     $result->titulo=$form['title'];
     $result->precio=$form['price'];
+    $product->display_size=$form['display_size'];
+    $product->camara=$form['camara'];
+    $product->RAM=$form['RAM'];
+    $product->OS=$form['OS'];
     $result->description=$form['description'];
     $result->save();
     $r=0;
@@ -79,6 +104,21 @@ class ProductController extends Controller
     $product->delete();
     $r=-1;
     return redirect("exito/$r");
+  }
+
+  public function detail($id){
+    $result = Product::find($id);
+    if($result == null){
+      return view('notFound');
+    }
+    $vac = compact('result');
+    return view('productDetails', $vac);
+  }
+
+  public function list(){
+    $result = Product::all();
+    $vac = compact('result');
+    return view('celulares', $vac);
   }
 
 }

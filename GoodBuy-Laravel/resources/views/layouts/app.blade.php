@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="/css/Vertical-Mobile-Collapsible-Menu.css">
   <link rel="stylesheet" href="/css/smoothproducts.css">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -40,7 +41,7 @@
 <body>
   {{-- <div id="app"> --}}
   {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"> --}}
-  <nav class="mb-1 navbar navbar-expand-lg navbar-dark  elegant-color-dark">
+  <nav class="mb-1 navbar navbar-expand-lg navbar-dark  elegant-color-dark" style="margin-bottom:0px !important">
     {{-- <div class="container"> --}}
     {{-- <a class="navbar-brand" href="{{ url('/') }}">
     {{ config('app.name', 'GoodBuy!') }}

@@ -28,12 +28,7 @@ Route::get('/faq',function(){
 Route::get('/contact',function(){
   return view('contact');
 });
-Route::get('/celulares',function(){
-  return view('celulares');
-});
-Route::get('/carrito',function(){
-  return view('cart');
-});
+Route::get('/carrito', 'CartController@search')->middleware('auth');
 Route::get('/profile',function(){
   return view('profile');
 })->middleware('auth');
@@ -41,14 +36,12 @@ Route::get('/profile',function(){
 Route::get('/abmProducts',function(){
   return view('abmProducts');
 });
-// Route::post('/abmProducts','ProductController@search');
-
+Route::get('/celulares', 'ProductController@list');
+Route::get('/product/{id}', 'ProductController@detail');
+Route::post('/addToCart/{id}', 'CartController@addToCart')->middleware('auth');
 Route::post('/agregar','ProductController@store');
 Route::get('/modificar','ProductController@search');
-Route::get('modificar/{result}',function($result){
-  $vac=compact('result');
-  return view('bmProducts',$vac);
-});
+Route::get('/modificar/{id}','ProductController@modify');
 Route::put('/modificar','ProductController@update');
 Route::delete('/borrar','ProductController@destroy');
 Route::get('/exito/{r}',function($r){

@@ -32,6 +32,22 @@
                                     <input class="form-control" type="number" step=".01" name="price" required="" value="{{old('price')}}">
                                   </div>
                                   <div class="form-row mb-4">
+                                    <label>Tamaño Pantalla</label>
+                                    <input class="form-control" type="text" name="display_size" required="" value="{{old('display_size')}}">
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>Camara</label>
+                                    <input class="form-control" type="text" name="camara" required="" value="{{old('camara')}}">
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>RAM</label>
+                                    <input class="form-control" type="text" name="RAM" required="" value="{{old('RAM')}}">
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>OS</label>
+                                    <input class="form-control" type="text" name="OS" required="" value="{{old('OS')}}">
+                                  </div>
+                                  <div class="form-row mb-4">
                                     <label>Descripción</label>
                                     <textarea class="form-control" name="description" required="" value="{{old('description')}}"></textarea>
                                   </div>
@@ -75,9 +91,9 @@
                                   <h3>Resultados de la busqueda:</h3>
                                   <div class="card">
 
-                                  <ul>
+                                  <ul class="list-group">
                                   @forelse ($result as $result)
-                                    <a href="/modificar/{{$result}}">
+                                    <a href="/modificar/{{$result['id']}}">
                                      <li class="list-group-item">{{$result['titulo']}}</li>
                                      </a>
                                   @empty
