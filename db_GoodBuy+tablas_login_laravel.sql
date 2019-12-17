@@ -31,10 +31,12 @@ CREATE TABLE `users` (
   `address` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `dni` int(11) DEFAULT NULL,
   `cart_id` int(11) NOT NULL,
+  `role` varchar(45) COLLATE utf8_unicode_ci DEFAULT 'USER',
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`),
   KEY `cart_id_idx` (`cart_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 
 CREATE TABLE `password_resets` (
