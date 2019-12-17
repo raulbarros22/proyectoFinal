@@ -33,12 +33,11 @@ Route::get('/profile',function(){
   return view('profile');
 })->middleware('auth');
 
-Route::get('/abmProducts',function(){
-  return view('abmProducts');
-});
+Route::get('/abmProducts', 'ProductController@abm')->middleware('auth');
 Route::get('/celulares', 'ProductController@list');
 Route::get('/product/{id}', 'ProductController@detail');
 Route::post('/addToCart/{id}', 'CartController@addToCart')->middleware('auth');
+Route::post('/delete/{id}', 'CartController@deleteFromCart')->middleware('auth');
 Route::post('/agregar','ProductController@store');
 Route::get('/modificar','ProductController@search');
 Route::get('/modificar/{id}','ProductController@modify');
