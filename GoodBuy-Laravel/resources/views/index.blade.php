@@ -13,6 +13,11 @@
       <li class="nav-item">
         <a class="btn nav-link text-dark border-right yellow accent-3" href="">AUDIO</a>
       </li> --}}
+      @if (Auth::user()->role == 'ADMIN')
+      <li class="nav-item">
+        <a class="btn nav-link text-dark border-right yellow accent-3" href="/abmProducts">ABM Productos</a>
+      </li>
+      @endif
       <li class="nav-item">
         <a class="btn nav-link text-dark border-right yellow accent-3" href="/celulares">SMARTPHONE</a>
       </li>

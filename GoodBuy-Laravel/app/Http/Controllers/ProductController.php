@@ -105,4 +105,12 @@ class ProductController extends Controller
     return view('celulares', $vac);
   }
 
+  public function abm(){
+    if(Auth::user()->role == "ADMIN"){
+      return view('abmProducts');
+    } else {
+      return "Forbbiden";
+    }
+  }
+
 }

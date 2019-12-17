@@ -30,7 +30,12 @@ Carrito
                                                 {{-- <div><span>Memory:&nbsp;</span><span class="value">64GB</span></div> --}}
                                             </div>
                                         </div>
-                                        <div class="col-6 col-md-2 quantity"><label class="d-none d-md-block" for="quantity">Cantidad</label><input type="number" id="number" class="form-control quantity-input" value="1"></div>
+                                        <div class="col-6 col-md-2">
+                                            <form action="/delete/{{$product->id}}" method="post">
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt fa-lg"></i></button>
+                                            </form>
+                                        </div>
                                         <div class="col-6 col-md-2 price"><span>${{$product->precio}}</span></div>
                                     </div>
                                 </div>

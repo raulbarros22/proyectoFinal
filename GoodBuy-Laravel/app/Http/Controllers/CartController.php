@@ -31,4 +31,11 @@ class CartController extends Controller
         }
         return $total;
     }
+
+    public function deleteFromCart($id){
+      $user = Auth::user();
+      $cart = Cart::find($user->cart_id);
+      $cart->productos()->detach($id);
+      return redirect('carrito');
+    }
 }
