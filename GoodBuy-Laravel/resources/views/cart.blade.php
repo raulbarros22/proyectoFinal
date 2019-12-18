@@ -45,7 +45,7 @@ Carrito
                                         <h4>Carrtio Vacio</h4>
                                     </div>
                                     <div class="row justify-content-center align-items-center">
-                                        <p>Agregue <a href="/celulares">productos</a> al carrito</p>
+                                        <p>Agregue <a href="/">productos</a> al carrito</p>
                                     </div>
                                 </div>
                                 @endforelse
@@ -57,7 +57,7 @@ Carrito
                                 <h4><span class="text">Subtotal</span><span class="price">${{CartController::determineTotal($products)}}</span></h4>
                                 {{-- <h4><span class="text">Descuento</span><span class="price">$0</span></h4> --}}
                                 <h4><span class="text">Envio</span><span class="price">$0</span></h4>
-                                <h4><span class="text">Total</span><span class="price">${{CartController::determineTotal($products)}}</span></h4><button class="btn btn-primary btn-block btn-lg" type="button">Checkout</button></div>
+                                <h4><span class="text">Total</span><span class="price">${{CartController::determineTotal($products)}}</span></h4><a href="/confirmacion"><button class="btn btn-primary btn-block btn-lg" type="button">Checkout</button></a></div>
                         </div>
                     </div>
                 </div>

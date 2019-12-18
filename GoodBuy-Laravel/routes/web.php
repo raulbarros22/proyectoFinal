@@ -33,8 +33,10 @@ Route::get('/profile',function(){
   return view('profile');
 })->middleware('auth');
 
+Route::get('/confirmacion', 'CartController@finishOrder')->middleware('auth');
 Route::get('/abmProducts', 'ProductController@abm')->middleware('auth');
 Route::get('/celulares', 'ProductController@list');
+Route::get('/notebooks', 'ProductController@list');
 Route::get('/product/{id}', 'ProductController@detail');
 Route::post('/addToCart/{id}', 'CartController@addToCart')->middleware('auth');
 Route::post('/delete/{id}', 'CartController@deleteFromCart')->middleware('auth');

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('titulo')
-  Celulares
+  Notebooks
 @endsection
 @section('content')
 @php
@@ -14,8 +14,8 @@
       <div class="card m-auto py-2" style="width: 18rem;">
            <img src={{$item->imageURL}} class="card-img-top" alt="...">
           <div class="card-body">
-            <h4 class="card-title">{{$item->titulo}}</h4>
-            <p class="card-text warning"><h5>USD {{$item->precio}}</h5></p>
+            <h3 class="card-title">{{$item->titulo}}</h3>
+            <p class="card-text warning"><h4>USD {{$item->precio}}</h4></p>
              <button type="button" class="btn btn-light"><a style="text-decoration: none" href="/product/{{$item->id}}">Ver Producto</a></button>
         </div>
       </div>
