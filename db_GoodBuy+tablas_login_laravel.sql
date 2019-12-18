@@ -14,8 +14,9 @@ CREATE TABLE `products` (
   `camara` varchar(15) COLLATE utf8_unicode_ci DEFAULT 'No especificado',
   `RAM` varchar(15) COLLATE utf8_unicode_ci DEFAULT 'No especificado',
   `OS` varchar(15) COLLATE utf8_unicode_ci DEFAULT 'No especificado',
+  `category` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -58,24 +59,19 @@ CREATE TABLE `carts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
   
-CREATE TABLE `goodbuy_db`.`cart_product` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `cart_id` INT NOT NULL,
-  `product_id` INT NOT NULL,
+CREATE TABLE `cart_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cart_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `cart_product_idx` (`cart_id` ASC),
-  INDEX `product_cart_idx` (`product_id` ASC),
-  CONSTRAINT `cart_product`
-    FOREIGN KEY (`cart_id`)
-    REFERENCES `goodbuy_db`.`carts` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `product_cart`
-    FOREIGN KEY (`product_id`)
-    REFERENCES `goodbuy_db`.`products` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+  KEY `cart_product_idx` (`cart_id`),
+  KEY `product_cart_idx` (`product_id`),
+  CONSTRAINT `cart_product` FOREIGN KEY (`cart_id`) REFERENCES `carts` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `product_cart` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-INSERT INTO products values (DEFAULT, now(), now(), 'Iphone 11 Pro Max', '1199.99', '/images/iphone11-430.jpg', 'A new dual‑camera system captures more of what you see and love. The fastest chip ever in a smartphone and all‑day battery life let you do more and charge less. And the highest‑quality video in a smartphone, so your memories look better than ever.', '6.3', '3 X 12MP', '4GB', 'IOS 13.3');
-INSERT INTO products values (DEFAULT, now(), now(), 'Motorola One Zoom ', '499.99', '/images/Motorola-One-Zoom-430.jpg', 'Motorola One Zoom 64GB', '5.8', '48MP', '4GB', 'Android 10');
+
+INSERT INTO products values (DEFAULT, now(), now(), 'Iphone 11 Pro Max', '1199.99', '/images/iphone11-430.jpg', 'A new dual‑camera system captures more of what you see and love. The fastest chip ever in a smartphone and all‑day battery life let you do more and charge less. And the highest‑quality video in a smartphone, so your memories look better than ever.', '6.3', '3 X 12MP', '4GB', 'IOS 13.3', 'Smartphone');
+INSERT INTO products values (DEFAULT, now(), now(), 'Motorola One Zoom ', '499.99', '/images/Motorola-One-Zoom-430.jpg', 'Motorola One Zoom 64GB', '5.8', '48MP', '4GB', 'Android 10', 'Smartphone');
+INSERT INTO products values(DEFAULT, now(), now(), 'HP Spectre x360 ', '999.99', '/images/HP-spectre-430.jpg', 'HP Spectre x360', '13,3', DEFAULT , '8GB', 'Windows 10', 'Laptop');
