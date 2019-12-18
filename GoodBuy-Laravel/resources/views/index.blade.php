@@ -7,13 +7,13 @@
   <!--2- Nav-->
   <div class="container-fluid border-top">
     <ul class="nav justify-content-center">
-{{--       <li class="nav-item">
-        <a class="btn nav-link text-dark border-right yellow accent-3" href="">CAMARAS</a>
-      </li>
       <li class="nav-item">
+        <a class="btn nav-link text-dark border-right yellow accent-3" href="/notebooks">NOTEBOOKS</a>
+      </li>
+ {{--      <li class="nav-item">
         <a class="btn nav-link text-dark border-right yellow accent-3" href="">AUDIO</a>
       </li> --}}
-      @if (Auth::user()->role == 'ADMIN')
+      @if (Auth::user() !== null && Auth::user()->role == 'ADMIN')
       <li class="nav-item">
         <a class="btn nav-link text-dark border-right yellow accent-3" href="/abmProducts">ABM Productos</a>
       </li>
