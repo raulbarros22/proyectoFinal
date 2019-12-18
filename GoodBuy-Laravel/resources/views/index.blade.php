@@ -20,16 +20,16 @@
         <a class="btn nav-link text-dark yellow accent-3" href="">ACCESORIOS</a>
       </li> --}}
     </ul>
-    <ul class="nav justify-content-center">
-  {{--     <li class="nav-item">
+    {{-- <ul class="nav justify-content-center">
+      <li class="nav-item">
         <a class="nav-link text-dark border-right border-bottom" href="#!"><i class="fas fa-heart prefix px-2"></i>Me
           Gusta!</a>
-      </li> --}}
+      </li>
       <li class="nav-item">
         <a class="nav-link text-dark border-bottom" href="/carrito"><i
             class="fas fa-cart-arrow-down prefix px-2"></i>Carrito!</a>
       </li>
-    </ul>
+    </ul> --}}
   </div>
 
   <header class="promotions">
@@ -159,37 +159,32 @@
   </div>
 
     <!-- Borrar BRs  -->
-  <br><br><br><br><br><br><br><br><br>
   <!--CUOTAS-->
   <div class="card text-center" style="background-color:white;">
     <div class="container-fluid  my-2">
       <div class="row">
         <div class="col-md-3 border-right card-body ">
           <p class="titulo">Pagá con crédito y debito</p>
-          <p><a href="nav-link"> Ver Promociones!</a></p>
+          <p><a href=""> Ver Promociones!</a></p>
           <a class="fas fa-credit-card fa-2x prefix" href=""></a>
-
-
         </div>
         <div class="col-md-3 border-right card-body">
           <p class="titulo">Retiro gratis en cualquier</p>
-
-          <p><a href="nav-link"> Sucursal!</a></p>
+          <p><a href=""> Sucursal!</a></p>
           <a class="fas fa-home fa-2x prefix" href=""></a>
         </div>
         <div class="col-md-3 border-right card-body">
           <p class="titulo">El envió más rápido</p>
-          <p><a href="nav-link">Segui tu envió!</a></p>
+          <p><a href="">Segui tu envió!</a></p>
           <a class="fas fa-truck fa-2x prefix" href=""></a>
         </div>
         <div class="col-md-3  card-body">
           <p class="titulo">Compra en GoodBuy!</p>
-          <p><a href="nav-link"> Beneficios!</a></p>
+          <p><a href=""> Beneficios!</a></p>
           <a class="fas fa-shopping-cart fa-2x prefix" href=""></a>
         </div>
       </div>
     </div>
   </div>
-  <br>
 
 @endsection
