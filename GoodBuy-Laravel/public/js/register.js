@@ -1,26 +1,3 @@
-// window.onload=function(){
-  // var nombre=document.querySelector('input[name=name]');
-  // var apellido=document.querySelector('input[name=surname]');
-  // var dni=document.querySelector('input[name=dni]');
-  // var domicilio=document.querySelector('input[name=address]');
-  // var email=document.querySelector('input[name=email]');
-  // var telefono=document.querySelector('input[name=telefono]');
-  // var contraseña1=document.querySelector('input[name=password]');
-  // var contraseña2=document.querySelector('input[name=password_confirmation]');
-  // var formulario=document.getElementById('form-register');
-  //
-  // formulario.onsubmit=function(event){
-  //
-  //     if (nombre.value.length=='') {
-  //       alert("Nombre no puede estar vacio");
-  //       event.preventDefault();
-  //     }else if (nombre.value.length<3) {
-  //       nombre.setCustomValidity("Nombre no puede tener menos de 3 caracteres");
-  //       event.preventDefault();
-  //     }
-  //
-  //
-  // }
 
     function validar(formulario){
     var regexEmail= /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -38,77 +15,77 @@
 
     if(nombre === "")
 {
-   alert("El campo nombre esta vacio");
+   swal("ERROR","El campo nombre esta vacio","error");
     document.getElementById("name").focus();
     return false;
 
   }else if(nombre.length>50 || nombre.length<3){
-     alert("Los nombres deben contar entre 3 y 50 caracteres");
+     swal("ERROR","Los nombres deben contar con entre 3 y 50 caracteres", "error");
      // nombre.setCustomValidity("Nombre no puede tener menos de 3 caracteres");
         document.getElementById("name").focus();
     return false;
   }else if(apellido=== ""){
-     alert("El campo apellido esta vacio");
+     swal("ERROR","El campo apellido esta vacio","error");
         document.getElementById("surname").focus();
     return false;
   }else if(apellido.length>50 || apellido.length<3){
-     alert("El apellido deben contar entre 3 y 50 caracteres");
+     swal("ERROR","El apellido deben contar entre 3 y 50 caracteres","error");
              document.getElementById("surname").focus();
     return false;
   }else if(dni=== ""){
-     alert("El campo dni esta vacio");
+     swal("ERROR","El campo dni esta vacio","ERROR");
         document.getElementById("dni").focus();
     return false;
   }else if(dni.length<8 || dni.length>8){
-     alert("El dni deben contar 8 caracteres");
+     swal("ERROR","El dni deben contar 8 caracteres","error");
              document.getElementById("dni").focus();
     return false;
   }
   else if(domicilio=== ""){
-     alert("El campo domicilio esta vacio");
+     swal("ERROR","El campo domicilio esta vacio","error");
         document.getElementById("address").focus();
     return false;
   }else if(domicilio.length>50 || domicilio.length<5){
-     alert("El domicilio deben contar entre 5 y 50 caracteres");
+     swal("ERROR","El domicilio deben contar entre 5 y 50 caracteres","error");
              document.getElementById("address").focus();
     return false;
   }else if(email=== ""){
-     alert("El campo email esta vacio");
+     swal("ERROR","El campo email esta vacio","error");
         document.getElementById("address").focus();
     return false;
   }
   else if(!regexEmail.test(email)){
-  alert("Correo formato invalido");
+  swal("ERROR","Correo formato invalido","error");
     document.getElementById("email").focus();
   return false;
 }else if(telefono=== ""){
-     alert("El campo telefono esta vacio");
+     swal("ERROR","El campo telefono esta vacio","error");
         document.getElementById("telefono").focus();
     return false;
   }else if(telefono.length<10 || telefono.length>10){
-     alert("El telefono deben contener 10 numeros");
+     swal("ERROR","El telefono deben contener 10 numeros","error");
              document.getElementById("telefono").focus();
     return false;
   }
 
 
   else if(password1=== ""){
-     alert("El campo contraseña esta vacio");
+     swal("ERROR","El campo contraseña esta vacio","error");
             document.getElementById("password").focus();
     return false;
   }else if(email=== "" ){
-alert("El campo email esta vacio");
+swal("ERROR","El campo email esta vacio","error");
       document.getElementById("email").focus();
 return false;
 }
 
 
   else if(password1.length>40 || password1.length<8){
-     alert("La contraseña debe contar entre 8 y 40 caracteres");
+     swal("ERROR","La contraseña debe contar entre 8 y 40 caracteres","error");
        document.getElementById("password").focus();
     return false;
         }else if(password2=== ""){
-     alert("Verifique su contraseña");
+     swal("ERROR","Verifique su contraseña","error");
        document.getElementById("password-confirm").focus();
     return false;
         }
@@ -116,11 +93,9 @@ return false;
 
     if(password1 === password2){
         }else{
-            alert("Las contraseñas no coinciden");
+            swal("ERROR","Las contraseñas no coinciden","error");
               document.getElementById("password-confirm").focus();
     return false;
             }
 
     }
-
-// }

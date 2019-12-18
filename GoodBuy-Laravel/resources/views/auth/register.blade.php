@@ -88,7 +88,20 @@ Registro
                             @enderror
                         </div>
                     </div>
+                    {{-- <div class="form-row mb-4">
+                      <div class="col">
+                        <label for="fecha-nac">Fecha de Nacimiento</label>
+                          <input id="fecha-nac" type="date"
+                              class="form-control @error('fecha-nac') is-invalid @enderror" name="fecha-nac"
+                              value="{{old('fecha-nac')}}" placeholder="Fecha de Nacimiento" autocomplete="fecha-nac" autofocus >
 
+                          @error('fecha-nac')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                          @enderror
+                      </div>
+                    </div> --}}
                     <div class="form-row mb-4">
                         <div class="col">
                             {{-- <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

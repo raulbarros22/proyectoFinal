@@ -190,6 +190,7 @@
   <script src="/js/smoothproducts.min.js"></script>
   <script src="/js/theme.js"></script>
   <script src="/js/register.js" type="text/javascript"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>
