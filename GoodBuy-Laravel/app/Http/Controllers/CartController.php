@@ -38,4 +38,11 @@ class CartController extends Controller
       $cart->productos()->detach($id);
       return redirect('carrito');
     }
+
+    public function finishOrder(){
+      $user = Auth::user();
+      $cart = Cart::find($user->cart_id);
+      $cart->productos()->detach();
+      return view('confirmacion');
+    }
 }
