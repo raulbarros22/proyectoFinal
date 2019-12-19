@@ -308,3 +308,7 @@ main.py-4{
 .mb-1, .my-1 {
    margin-bottom: 0 !important;
 }
+
+.main-cards{
+	margin: 10px 0px;
+}
