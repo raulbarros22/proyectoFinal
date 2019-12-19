@@ -63,10 +63,10 @@
     <p class="accesorios">Los mejores accesorios!!</p>
     <hr>
   </div>
-  <div class="container justify-content-center">
-    <div class="row">
-      <div class="col-sm-12 col-md-3 justify-content-center">
-        <div class="card" style="width: 13rem;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="card" style="width: 100%;">
           <img class="card-img-top" src="/images/accesorios.jpg" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">ACCESORIOS</h5>
@@ -77,8 +77,8 @@
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-3 justify-content-center">
-        <div class="card" style="width: 13rem;">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="card" style="width: 100%;">
           <img class="card-img-top" src="/images/camara.jpg" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">CAMARAS</h5>
@@ -89,8 +89,8 @@
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-3 justify-content-center">
-        <div class="card" style="width: 13rem;">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="card" style="width: 100%;">
           <img class="card-img-top" src="/images/celular.jpg" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">SMARTPHONE</h5>
@@ -101,8 +101,8 @@
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-3 justify-content-center">
-        <div class="card" style="width: 13rem;">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="card" style="width: 100%;">
           <img class="card-img-top" src="/images/auriculares.jpg" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">AURICULARES</h5>
