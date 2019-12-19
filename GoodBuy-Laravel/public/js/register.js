@@ -20,7 +20,7 @@
     return false;
 
   }else if(nombre.length>50 || nombre.length<2){
-     swal("ERROR","Nombre deben tener con entre 2 y 50 caracteres", "error");
+     swal("ERROR","Nombre deben tener entre 2 y 50 caracteres", "error");
      // nombre.setCustomValidity("Nombre no puede tener menos de 3 caracteres");
         document.getElementById("name").focus();
     return false;
