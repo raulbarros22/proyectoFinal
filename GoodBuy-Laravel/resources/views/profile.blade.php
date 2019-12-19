@@ -34,6 +34,26 @@
                                @enderror
                           </div>
                           <div class="md-form">
+                             <i class="fas fa-passport prefix"></i>
+                             <label for="name">DNI</label>
+                             <input type="text" id="dni" class="form-control  @error('dni') is-invalid @enderror" name="dni" value="{{Auth::user()->dni}}" autocomplete="dni" autofocus>
+                               @error('dni')
+                                   <span class="invalid-feedback" role="alert">
+                                       <strong>{{ $message }}</strong>
+                                   </span>
+                               @enderror
+                          </div>
+                          <div class="md-form">
+                             <i class="fas fa-map-marker-alt prefix"></i>
+                             <label for="name">Domicilio</label>
+                             <input type="text" id="address" class="form-control  @error('address') is-invalid @enderror" name="address" value="{{Auth::user()->address}}" autocomplete="address" autofocus>
+                               @error('address')
+                                   <span class="invalid-feedback" role="alert">
+                                       <strong>{{ $message }}</strong>
+                                   </span>
+                               @enderror
+                          </div>
+                          <div class="md-form">
                              <i class="fas fa-envelope-open-text prefix"></i>
                              <label for="e-mail">E-mail</label>
                              <input type="email" id="e-mail" class="form-control  @error('email') is-invalid @enderror" name="email" value="{{Auth::user()->email}}" autocomplete="email" autofocus>
