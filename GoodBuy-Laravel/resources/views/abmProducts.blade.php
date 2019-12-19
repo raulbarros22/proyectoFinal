@@ -24,6 +24,14 @@
                               <form method="post" action="/agregar" enctype="multipart/form-data">
                                   @csrf
                                   <div class="form-row mb-4">
+                                    <label>Categoria</label>
+                                    <select name="category" class="custom-select">
+                                      <option selected>Elegir...</option>
+                                      <option value="Smartphone">Smartphone</option>
+                                      <option value="Laptop">Laptop</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-row mb-4">
                                     <label>Titulo</label>
                                     <input class="form-control" type="text" name="title" required="" value="{{old('title')}}">
                                   </div>
