@@ -35,6 +35,7 @@ class ProductController extends Controller
             'camara'=>'string',
             'RAM'=>'string',
             'OS'=>'string',
+            'category'=>'string'
         ];
         $mensajes = [
             'string' => 'El campo :attribute de ser texto',
@@ -57,6 +58,7 @@ class ProductController extends Controller
         $product->camara=$req['camara'];
         $product->RAM=$req['RAM'];
         $product->OS=$req['OS'];
+        $product->category=$form['category'];
         $product->save();
         return redirect("exito/1");
     }
@@ -72,6 +74,7 @@ class ProductController extends Controller
             'camara'=>'string',
             'RAM'=>'string',
             'OS'=>'string',
+            'category'=>'string'
         ];
         $mensajes = [
             'string' => 'El campo :attribute de ser texto',
@@ -95,6 +98,7 @@ class ProductController extends Controller
         $product->camara=$form['camara'];
         $product->RAM=$form['RAM'];
         $product->OS=$form['OS'];
+        $product->category=$form['category'];
         $result->save();
         return redirect("exito/0");
     }
