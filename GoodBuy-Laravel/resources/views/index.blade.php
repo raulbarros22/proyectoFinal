@@ -65,7 +65,7 @@
   </div>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-sm-12 col-md-6 col-lg-3">
+      <div class="col-sm-12 col-md-6 col-lg-3 main-cards">
         <div class="card" style="width: 100%;">
           <img class="card-img-top" src="/images/accesorios.jpg" alt="Card image cap">
           <div class="card-body">
@@ -77,7 +77,7 @@
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-6 col-lg-3">
+      <div class="col-sm-12 col-md-6 col-lg-3 main-cards">
         <div class="card" style="width: 100%;">
           <img class="card-img-top" src="/images/camara.jpg" alt="Card image cap">
           <div class="card-body">
@@ -89,7 +89,7 @@
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-6 col-lg-3">
+      <div class="col-sm-12 col-md-6 col-lg-3 main-cards">
         <div class="card" style="width: 100%;">
           <img class="card-img-top" src="/images/celular.jpg" alt="Card image cap">
           <div class="card-body">
@@ -101,7 +101,7 @@
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-6 col-lg-3">
+      <div class="col-sm-12 col-md-6 col-lg-3 main-cards">
         <div class="card" style="width: 100%;">
           <img class="card-img-top" src="/images/auriculares.jpg" alt="Card image cap">
           <div class="card-body">
@@ -132,16 +132,16 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-sm-12 col-md-3 col-lg-3">
+      <div class="col-sm-12 col-md-3 col-lg-3" style="margin: 10px 0px">
         <img src="/images/logodell.jpg" class="img-fluid" alt="Responsive image">
       </div>
-      <div class="col-sm-12 col-md-3 col-lg-3">
+      <div class="col-sm-12 col-md-3 col-lg-3" style="margin: 10px 0px">
         <img src="/images/logohp.jpg" class="img-fluid" alt="Responsive image">
       </div>
-      <div class="col-sm-12 col-md-3 col-lg-3">
+      <div class="col-sm-12 col-md-3 col-lg-3" style="margin: 10px 0px">
         <img src="/images/logoacer.jpg" class="img-fluid" alt="Responsive image">
       </div>
-      <div class="col-sm-12 col-md-3 col-lg-3">
+      <div class="col-sm-12 col-md-3 col-lg-3" style="margin: 10px 0px">
         <img src="/images/logolenovo.jpg" class="img-fluid" alt="Responsive image">
       </div>
     </div>

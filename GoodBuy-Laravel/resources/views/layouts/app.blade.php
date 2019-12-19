@@ -91,7 +91,7 @@
       @endguest
         <li class="nav-item">
           <a class="nav-link " href="/carrito">
-            <i class="fas fa-cart-arrow-down prefix px-2"></i> Carrito
+            <i class="fas fa-cart-arrow-down prefix"></i> Carrito
           </a>
         </li>
       </ul>
