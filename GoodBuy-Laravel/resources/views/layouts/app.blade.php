@@ -59,7 +59,7 @@
         <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Buscar</button>
       </form>
       <!-- Right Side Of Navbar -->
-      <ul class="navbar-nav ml-auto nav-flex-icons">
+      <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->
         @guest
           <li class="nav-item">
