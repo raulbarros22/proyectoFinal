@@ -27,7 +27,8 @@
   <link rel="stylesheet" href="/css/Vertical-Mobile-Collapsible-Menu.css">
   <link rel="stylesheet" href="/css/smoothproducts.css">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -39,30 +40,16 @@
 </head>
 
 <body>
-  {{-- <div id="app"> --}}
-  {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"> --}}
   <nav class="mb-1 navbar navbar-expand-lg navbar-dark  elegant-color-dark" style="margin-bottom:0px !important">
-    {{-- <div class="container"> --}}
-    {{-- <a class="navbar-brand" href="{{ url('/') }}">
-    {{ config('app.name', 'GoodBuy!') }}
-    </a> --}}
     <a class="navbar-brand" href="/">GoodBuy!</a>
-    {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-    <span class="navbar-toggler-icon"></span>
-    </button> --}}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
       aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    {{-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul> --}}
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/contact">Contacto</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/faq">Preguntas Frecuentes</a>
@@ -73,59 +60,42 @@
         <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Buscar</button>
       </form>
       <!-- Right Side Of Navbar -->
-      {{-- <ul class="navbar-nav ml-auto"> --}}
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="http://www.twitter.com">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="http://www.facebook.com">
-            <i class="fab fa-facebook-square"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="http://www.instagram.com">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
+      <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            @guest
-            <i class="fas fa-user"></i>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-            <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>
-            @if (Route::has('register'))
-            <a class="dropdown-item" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
-            @endif
-            <a class="dropdown-item" href="/contact">Contacto</a>
-          </div>
-
-          @else
-          <span>{{ Auth::user()->name }} </span><span>{{Auth::user()->surname}}</span>
-
+        @guest
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}"><span>{{ __('Login') }}</span></a>
+          </li>
+          @if (Route::has('register'))
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('register') }}"><span>{{ __('Registrarse') }}</span></a>
+            </li>
+          @endif
+        @else
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span>{{ Auth::user()->name }} </span><span>{{Auth::user()->surname}}</span>
+            </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
             <a class="dropdown-item" href="/profile">Perfil de Usuario</a>
-            <a class="dropdown-item" href="/contact">Contacto</a>
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+              document.getElementById('logout-form').submit();">
               {{ __('Cerrar Sesion') }}
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               @csrf
             </form>
-
           </div>
-          @endguest
-
+        </li>
+      @endguest
+        <li class="nav-item">
+          <a class="nav-link " href="/carrito">
+            <i class="fas fa-cart-arrow-down prefix px-2"></i> Carrito
+          </a>
         </li>
       </ul>
     </div>
-    {{-- </div> --}}
   </nav>
 
   <main class="py-4">
@@ -140,41 +110,60 @@
           <div class="pr-xl-4"><a class="brand text-white" href="index.php"><img class="brand-logo-light"
                 src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37"
                 srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
-            <p class="text-white">We are an award-winning creative agency, dedicated to the best result in web design,
-              promotion, business consulting, and marketing.</p>
-            <!-- Rights-->
-            <p class="rights text-white"><span>©  </span><span
-                class="copyright-year">2019</span><span> </span><span>Waves</span><span>. </span><span>All Rights
-                Reserved.</span></p>
+            <p class="rights text-white">Copyright © 2019 GoodBuy.</p>
+            <p class="rights text-white">El uso de este sitio web implica la aceptación de los Términos y Condiciones
+              y de las Políticas de Privacidad de GoodBuy S.A. Las fotos son a modo ilustrativo. La venta de
+              cualquiera de los productos publicados está sujeta a la verificación de stock. Los precios online para
+              los productos presentados/publicados en www.goodbuy.com.ar y/o www.goodbuy.com son válidos
+              exclusivamente para la compra vía internet en las páginas antes mencionadas.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <h5 class="text-white">Contactos</h5>
+          <h5 class="text-white">Contacto</h5>
           <dl class="contact-list">
             <dt class="text-white">Direccion:</dt>
-            <dd class="text-white">Av. Roca 1568, S.M.T</dd>
+            <dd class="text-white">Cordoba 790 San Miguel de Tucumán</dd>
           </dl>
           <dl class="contact-list">
             <dt class="text-white">E-mail:</dt>
-            <dd><a class="text-white" href="mailto:#">goodbuy@gmail.com</a></dd>
+            <dd><a class="text-white" href="mailto:ventas@goodbuy.com">ventas@goodbuy.com</a></dd>
           </dl>
           <dl class="contact-list">
-            <dt class="text-white">Telefono</dt>
-            <dd><a class="text-white" href="tel:#">+54 9 3815184917</a> <span>
+            <dt class="text-white">Telefono:</dt>
+            <dd><a class="text-white" href="tel:08101234567">0810-123-4567</a> <span>
             </dd>
           </dl>
+          <p class="gb-newsletter-subscription-title text-white">¡Recibí las mejores ofertas!</p>
+          <input type="email" id="newsletter-subscription" placeholder="Ingresa tu e-mail">
+          <input id="subscribe-action" class="subscribe" type="submit" value="SUSCRIBIRME">
         </div>
         <div class="col-md-4 col-xl-3">
-
-          <ul>
+          <h5 style="margin-bottom: 20px;" class="text-white">Links</h5>
+          <ul class="navbar-nav ml-auto nav-flex-icons">
             <li><a class="text-white" href="/">Home</a></li>
             <li><a class="text-white" href="/faq">Preguntas Frecuentes</a></li>
-            <li><a class="text-white" href="/register">Registracion</a></li>
+            <li><a class="text-white" href="/contact">Contacto</a></li>
+            <li>
+              <a class="text-white" href="http://www.twitter.com">
+                <i class="fab fa-twitter"></i> Twitter
+              </a>
+            </li>
+            <li>
+              <a class="text-white" href="http://www.facebook.com">
+                <i class="fab fa-facebook-square"></i> Facebook
+              </a>
+            </li>
+            <li>
+              <a class="text-white" href="http://www.instagram.com">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            </li>
 
           </ul>
         </div>
       </div>
     </div>
+    <br>
   </footer>
   <!-- JQuery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -189,6 +178,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
   <script src="/js/smoothproducts.min.js"></script>
   <script src="/js/theme.js"></script>
+  <script src="/js/register.js" type="text/javascript"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

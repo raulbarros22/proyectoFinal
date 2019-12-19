@@ -5,35 +5,19 @@
 @section('content')
 
   <!--2- Nav-->
-  <div class="container-fluid border-top">
+  <div class="container-fluid border-top" style="padding-top: 15px">
     <ul class="nav justify-content-center">
       <li class="nav-item">
         <a class="btn nav-link text-dark border-right yellow accent-3" href="/notebooks">NOTEBOOKS</a>
       </li>
- {{--      <li class="nav-item">
-        <a class="btn nav-link text-dark border-right yellow accent-3" href="">AUDIO</a>
-      </li> --}}
+      <li class="nav-item">
+        <a class="btn nav-link text-dark border-right yellow accent-3" href="/celulares">SMARTPHONE</a>
+      </li>
       @if (Auth::user() !== null && Auth::user()->role == 'ADMIN')
       <li class="nav-item">
         <a class="btn nav-link text-dark border-right yellow accent-3" href="/abmProducts">ABM Productos</a>
       </li>
       @endif
-      <li class="nav-item">
-        <a class="btn nav-link text-dark border-right yellow accent-3" href="/celulares">SMARTPHONE</a>
-      </li>
-      {{-- <li class="nav-item">
-        <a class="btn nav-link text-dark yellow accent-3" href="">ACCESORIOS</a>
-      </li> --}}
-    </ul>
-    <ul class="nav justify-content-center">
-  {{--     <li class="nav-item">
-        <a class="nav-link text-dark border-right border-bottom" href="#!"><i class="fas fa-heart prefix px-2"></i>Me
-          Gusta!</a>
-      </li> --}}
-      <li class="nav-item">
-        <a class="nav-link text-dark border-bottom" href="/carrito"><i
-            class="fas fa-cart-arrow-down prefix px-2"></i>Carrito!</a>
-      </li>
     </ul>
   </div>
 
@@ -179,22 +163,21 @@
         <div class="col-md-3 border-right card-body">
           <p class="titulo">Retiro gratis en cualquier</p>
 
-          <p><a href="nav-link"> Sucursal!</a></p>
+          <p><a href=""> Sucursal!</a></p>
           <a class="fas fa-home fa-2x prefix" href=""></a>
         </div>
         <div class="col-md-3 border-right card-body">
           <p class="titulo">El envió más rápido</p>
-          <p><a href="nav-link">Segui tu envió!</a></p>
+          <p><a href="">Segui tu envió!</a></p>
           <a class="fas fa-truck fa-2x prefix" href=""></a>
         </div>
         <div class="col-md-3  card-body">
           <p class="titulo">Compra en GoodBuy!</p>
-          <p><a href="nav-link"> Beneficios!</a></p>
+          <p><a href=""> Beneficios!</a></p>
           <a class="fas fa-shopping-cart fa-2x prefix" href=""></a>
         </div>
       </div>
     </div>
   </div>
-  <br>
 
 @endsection

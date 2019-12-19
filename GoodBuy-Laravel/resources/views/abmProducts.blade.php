@@ -36,6 +36,22 @@
                                     <textarea class="form-control" name="description" required="" value="{{old('description')}}"></textarea>
                                   </div>
                                   <div class="form-row mb-4">
+                                    <label>Tamaño Pantalla</label>
+                                    <input class="form-control" type="text" name="display_size" required="" value="{{old('display_size')}}">
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>Camara</label>
+                                    <input class="form-control" type="text" name="camara" required="" value="{{old('camara')}}">
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>RAM</label>
+                                    <input class="form-control" type="text" name="RAM" required="" value="{{old('RAM')}}">
+                                  </div>
+                                  <div class="form-row mb-4">
+                                    <label>OS</label>
+                                    <input class="form-control" type="text" name="OS" required="" value="{{old('OS')}}">
+                                  </div>
+                                  <div class="form-row mb-4">
                                     <label>Imagen<br></label>
                                     <input class="d-flex" type="file" name="img" required="" accept="image/*">
                                   </div>
