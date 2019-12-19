@@ -31,6 +31,10 @@ class ProductController extends Controller
             'price' => 'numeric',
             'description' => 'string | min:3',
             'img' => 'file',
+            'display_size'=>'string',
+            'camara'=>'string',
+            'RAM'=>'string',
+            'OS'=>'string',
         ];
         $mensajes = [
             'string' => 'El campo :attribute de ser texto',
@@ -49,9 +53,12 @@ class ProductController extends Controller
         $product->titulo = $req['title'];
         $product->precio = $req['price'];
         $product->description = $req['description'];
+        $product->display_size=$req['display_size'];
+        $product->camara=$req['camara'];
+        $product->RAM=$req['RAM'];
+        $product->OS=$req['OS'];
         $product->save();
-        $r = 1;
-        return redirect("exito/$r");
+        return redirect("exito/1");
     }
 
     public function update(Request $form)
@@ -61,6 +68,10 @@ class ProductController extends Controller
             'price' => 'numeric',
             'description' => 'string | min:3',
             'img' => 'file',
+            'display_size'=>'string',
+            'camara'=>'string',
+            'RAM'=>'string',
+            'OS'=>'string',
         ];
         $mensajes = [
             'string' => 'El campo :attribute de ser texto',
@@ -80,9 +91,12 @@ class ProductController extends Controller
         $result->titulo = $form['title'];
         $result->precio = $form['price'];
         $result->description = $form['description'];
+        $product->display_size=$form['display_size'];
+        $product->camara=$form['camara'];
+        $product->RAM=$form['RAM'];
+        $product->OS=$form['OS'];
         $result->save();
-        $r = 0;
-        return redirect("exito/$r");
+        return redirect("exito/0");
     }
 
     public function destroy(Request $form)
@@ -90,8 +104,7 @@ class ProductController extends Controller
         $id = $form['id'];
         $product = Product::find($id);
         $product->delete();
-        $r = -1;
-        return redirect("exito/$r");
+        return redirect("exito/-1");
     }
 
     public function detail($id)

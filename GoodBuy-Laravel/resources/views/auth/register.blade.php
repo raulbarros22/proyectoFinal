@@ -9,14 +9,10 @@ Registro
             <div class="card">
                 <h3 class="text-center">REGISTRO</h3>
                 <hr class="danger-color-dark">
-                <form method="POST" class="text-center border border-light " action="{{ route('register') }}"
-                    enctype="multipart/form-data">
+                <form id="form-register" method="POST" class="text-center border border-light "
+                    action="{{ route('register') }}" enctype="multipart/form-data" onSubmit="return validar(this)">
                     @csrf
-
-
                     <div class="form-row mb-4">
-                        {{-- <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-                        --}}
                         <div class="col">
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
                                 name="name" value="{{old('name')}}" placeholder="Nombre" autocomplete="name" autofocus>
@@ -64,10 +60,8 @@ Registro
                         </div>
                     </div>
                     <div class="form-row mb-4">
-                        {{-- <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-                        --}}
                         <div class="col">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                            <input id="email" type="text" class="form-control @error('email') is-invalid @enderror"
                                 name="email" value="{{ old('email') }}" placeholder="Email" autocomplete="email">
 
                             @error('email')
@@ -91,8 +85,6 @@ Registro
 
                     <div class="form-row mb-4">
                         <div class="col">
-                            {{-- <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-                            --}}
                             <input id="password" type="password"
                                 class="form-control @error('password') is-invalid @enderror" name="password"
                                 placeholder="Contraseña" autocomplete="new-password">
@@ -102,30 +94,17 @@ Registro
                             </span>
                             @enderror
                         </div>
-                        {{-- <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-                        --}}
                         <div class="col">
                             <input id="password-confirm" type="password" class="form-control"
                                 name="password_confirmation" placeholder="Repetir contraseña"
                                 autocomplete="new-password">
                         </div>
                     </div>
-                    {{-- <div class="form-row mb-4">
-                          <div class="col">
-                            <input id="file" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
+                    <button type="submit" class="btn btn-info my-4 ">
 
-                              @error('avatar')
-                                  <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
+                        Registro
+                    </button>
+                </form>
             </div>
-        </div> --}}
-        <button type="submit" class="btn btn-info my-4 ">
-
-            Registro
-        </button>
-        </form>
-    </div>
-</div>
-@endsection
+        </div>
+        @endsection
