@@ -94,11 +94,11 @@ class ProductController extends Controller
         $result->titulo = $form['title'];
         $result->precio = $form['price'];
         $result->description = $form['description'];
-        $product->display_size=$form['display_size'];
-        $product->camara=$form['camara'];
-        $product->RAM=$form['RAM'];
-        $product->OS=$form['OS'];
-        $product->category=$form['category'];
+        $result->display_size=$form['display_size'];
+        $result->camara=$form['camara'];
+        $result->RAM=$form['RAM'];
+        $result->OS=$form['OS'];
+        $result->category=$form['category'];
         $result->save();
         return redirect("exito/0");
     }
