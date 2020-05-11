@@ -3,20 +3,15 @@
   Login
 @endsection
 @section('content')
-<div class="container" style="margin: 30px auto">
+<div class="container my-5 py-5 gb-login-user">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
-                {{-- <div class="card-header">{{ __('Login') }}</div> --}}
-
                 <div class="card-body">
-
                   <h3 class="text-center">LOGIN</h3>
                   <hr class="danger-color-dark">
-
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
                         <div class="md-form">
                            <i class="fas fa-envelope-open-text prefix"></i>
                            <label for="e-mail">E-mail</label>
@@ -27,7 +22,6 @@
                                  </span>
                              @enderror
                         </div>
-
                         <div class="md-form">
                            <i class="fas fa-pencil-alt prefix"></i>
                            <label for="password">Contraseña</label>
@@ -43,7 +37,7 @@
                             <input type="checkbox" class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                             <label class="form-check-label" for="remember">Recuerdame</label>
                         </div>
-  
+
                         <div class="text-center">
                           <button type="submit" class="btn btn-lg yellow accent-3" name="button">Ingresar</button>
                           <div class="text-center">

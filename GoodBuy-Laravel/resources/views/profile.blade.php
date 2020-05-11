@@ -3,12 +3,11 @@
   Perfil Usuario
 @endsection
 @section('content')
-  <div class="container">
+  <div class="container my-5 py-5 gb-perfil-user">
       <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card">
                   <div class="card-body">
-
                     <h3 class="text-center">Perfil de Usuario</h3>
                     <hr class="danger-color-dark">
                       <form method="" action="">

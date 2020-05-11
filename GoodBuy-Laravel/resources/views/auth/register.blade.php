@@ -3,9 +3,9 @@
 Registro
 @endsection
 @section('content')
-<div class="container" style="margin: 30px auto">
+<div class="container my-5 py-5 gb-register-user">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <h3 class="text-center">REGISTRO</h3>
                 <hr class="danger-color-dark">
@@ -101,10 +101,9 @@ Registro
                         </div>
                     </div>
                     <button type="submit" class="btn btn-info my-4 ">
-
                         Registro
                     </button>
                 </form>
             </div>
         </div>
-        @endsection
+  @endsection

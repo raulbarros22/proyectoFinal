@@ -101,7 +101,7 @@
 }
 
 #sidebar a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
-  content: '\e259';
+  /* content: '\e259'; */
   display: block;
   position: absolute;
   right: 20px;
@@ -150,4 +150,3 @@
   /*width: 100%;*/
   /*min-height: 100vh;*/
 }
-

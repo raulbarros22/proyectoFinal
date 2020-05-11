@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('titulo')
-  Home
+  GoodBuy-Home
 @endsection
 @section('content')
 
   <!--2- Nav-->
-  <div class="container-fluid border-top" style="padding-top: 15px">
+  {{-- <div class="container border-top my-5" style="padding-top: 15px">
     <ul class="nav justify-content-center">
       <li class="nav-item">
         <a class="btn nav-link text-dark border-right yellow accent-3" href="/notebooks">NOTEBOOKS</a>
@@ -19,8 +19,9 @@
       </li>
       @endif
     </ul>
-  </div>
+  </div> --}}
 
+  <div class="container my-5 calesita">
   <header class="promotions">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -57,15 +58,15 @@
       </a>
     </div>
   </header>
-
+  </div>
   <!-- Card-->
-  <div class="container">
+  <div class="container my-5">
     <p class="accesorios">Los mejores accesorios!!</p>
     <hr>
   </div>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-sm-12 col-md-6 col-lg-3 main-cards">
+      <div class="col-sm-12 col-md-6 col-lg-3 main-cards my-3">
         <div class="card" style="width: 100%;">
           <img class="card-img-top" src="/images/accesorios.jpg" alt="Card image cap">
           <div class="card-body">
@@ -77,7 +78,7 @@
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-6 col-lg-3 main-cards">
+      <div class="col-sm-12 col-md-6 col-lg-3 main-cards my-3">
         <div class="card" style="width: 100%;">
           <img class="card-img-top" src="/images/camara.jpg" alt="Card image cap">
           <div class="card-body">
@@ -89,7 +90,7 @@
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-6 col-lg-3 main-cards">
+      <div class="col-sm-12 col-md-6 col-lg-3 main-cards my-3">
         <div class="card" style="width: 100%;">
           <img class="card-img-top" src="/images/celular.jpg" alt="Card image cap">
           <div class="card-body">
@@ -101,7 +102,7 @@
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-6 col-lg-3 main-cards">
+      <div class="col-sm-12 col-md-6 col-lg-3 main-cards my-3">
         <div class="card" style="width: 100%;">
           <img class="card-img-top" src="/images/auriculares.jpg" alt="Card image cap">
           <div class="card-body">
@@ -116,53 +117,46 @@
     </div>
   </div>
 
-  <!-- Borrar BRs  -->
-  <br><br><br><br><br><br>
-  <div class="container">
+  <div class="container my-5">
     <img src="/images/audio.jpg" class="img-fluid" alt="Responsive image">
   </div>
 
-    <!-- Borrar BRs  -->
-  <br><br><br><br><br><br>
-  <div class="container">
+  <section class="marcas my-3">
+  <div class="container py-3">
     <p class="accesorios">
       Tenemos las mejores marcas!
     </p>
     <hr>
-  </div>
-  <div class="container">
+
     <div class="row">
-      <div class="col-sm-12 col-md-3 col-lg-3" style="margin: 10px 0px">
-        <img src="/images/logodell.jpg" class="img-fluid" alt="Responsive image">
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <img src="/images/logodell.jpg" class="img-fluid" alt="img-dell">
       </div>
-      <div class="col-sm-12 col-md-3 col-lg-3" style="margin: 10px 0px">
-        <img src="/images/logohp.jpg" class="img-fluid" alt="Responsive image">
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <img src="/images/logohp.jpg" class="img-fluid" alt="img-hp">
       </div>
-      <div class="col-sm-12 col-md-3 col-lg-3" style="margin: 10px 0px">
-        <img src="/images/logoacer.jpg" class="img-fluid" alt="Responsive image">
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <img src="/images/logoacer.jpg" class="img-fluid" alt="img-acer">
       </div>
-      <div class="col-sm-12 col-md-3 col-lg-3" style="margin: 10px 0px">
-        <img src="/images/logolenovo.jpg" class="img-fluid" alt="Responsive image">
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <img src="/images/logolenovo.jpg" class="img-fluid" alt="img-lenovo">
       </div>
     </div>
   </div>
+  </section>
 
-    <!-- Borrar BRs  -->
-  <br><br><br><br><br><br><br><br><br>
   <!--CUOTAS-->
-  <div class="card text-center" style="background-color:white;">
-    <div class="container-fluid  my-2">
+  <section class="cuotas">
+  <div class="container py-5">
+    <div class="card text-center">
       <div class="row">
         <div class="col-md-3 border-right card-body ">
           <p class="titulo">Pagá con crédito y debito</p>
           <p><a href="nav-link"> Ver Promociones!</a></p>
           <a class="fas fa-credit-card fa-2x prefix" href=""></a>
-
-
         </div>
         <div class="col-md-3 border-right card-body">
           <p class="titulo">Retiro gratis en cualquier</p>
-
           <p><a href=""> Sucursal!</a></p>
           <a class="fas fa-home fa-2x prefix" href=""></a>
         </div>
@@ -171,7 +165,7 @@
           <p><a href="">Segui tu envió!</a></p>
           <a class="fas fa-truck fa-2x prefix" href=""></a>
         </div>
-        <div class="col-md-3  card-body">
+        <div class="col-md-3 card-body">
           <p class="titulo">Compra en GoodBuy!</p>
           <p><a href=""> Beneficios!</a></p>
           <a class="fas fa-shopping-cart fa-2x prefix" href=""></a>
@@ -179,5 +173,6 @@
       </div>
     </div>
   </div>
+  </section>
 
 @endsection
